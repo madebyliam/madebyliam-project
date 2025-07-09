@@ -1494,37 +1494,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- Project Brief Form -->
 <script>
-document.getElementById('email-brief-form').addEventListener('submit', async function (e) {
-  e.preventDefault(); // Stop form from submitting normally
+    const form = document.getElementById('pdfForm');
+    const responseMsg = document.getElementById('responseMsg');
 
-  const emailInput = e.target.email;
-  const email = emailInput.value.trim();
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-  if (!email) {
-    alert('Please enter your email');
-    return;
-  }
+      const email = form.email.value.trim();
 
-  try {
-    const response = await fetch('/api/send-pdf', {  // Replace with your actual API endpoint
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email }),
+      if (!email) {
+        responseMsg.textContent = 'Please enter an email.';
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/send-pdf', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          responseMsg.textContent = 'PDF sent! Check your inbox.';
+        } else {
+          responseMsg.textContent = 'Error: ' + (data.error || 'Something went wrong.');
+        }
+      } catch (err) {
+        responseMsg.textContent = 'Network error. Try again.';
+      }
     });
-
-    const result = await response.json();
-
-    if (response.ok) {
-      alert('Success! Check your inbox for the brief.');
-      emailInput.value = '';  // Clear input
-    } else {
-      alert('Error: ' + (result.error || 'Something went wrong'));
-    }
-  } catch (error) {
-    alert('Network error: ' + error.message);
-  }
-});
-</script>
+  </script>
 
 
 </body>
