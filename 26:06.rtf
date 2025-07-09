@@ -1,0 +1,1237 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red109\green109\blue109;\red24\green24\blue24;\red70\green137\blue204;
+\red193\green193\blue193;\red140\green211\blue254;\red194\green126\blue101;\red202\green202\blue202;\red205\green173\blue106;
+\red167\green197\blue152;\red89\green138\blue67;\red212\green214\blue154;\red183\green111\blue179;\red238\green46\blue56;
+\red66\green179\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c50196\c50196\c50196;\cssrgb\c12157\c12157\c12157;\cssrgb\c33725\c61176\c83922;
+\cssrgb\c80000\c80000\c80000;\cssrgb\c61176\c86275\c99608;\cssrgb\c80784\c56863\c47059;\cssrgb\c83137\c83137\c83137;\cssrgb\c84314\c72941\c49020;
+\cssrgb\c70980\c80784\c65882;\cssrgb\c41569\c60000\c33333;\cssrgb\c86275\c86275\c66667;\cssrgb\c77255\c52549\c75294;\cssrgb\c95686\c27843\c27843;
+\cssrgb\c30980\c75686\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 <!\cf4 \strokec4 DOCTYPE\cf5 \strokec5  \cf6 \strokec6 html\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 html\cf5 \strokec5  \cf6 \strokec6 lang\cf5 \strokec5 =\cf7 \strokec7 "en"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 head\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3   \cf2 \strokec2 <\cf4 \strokec4 meta\cf5 \strokec5  \cf6 \strokec6 charset\cf5 \strokec5 =\cf7 \strokec7 "UTF-8"\cf5 \strokec5  \cf2 \strokec2 />\cf5 \cb1 \strokec5 \
+\cb3   \cf2 \strokec2 <\cf4 \strokec4 meta\cf5 \strokec5  \cf6 \strokec6 name\cf5 \strokec5 =\cf7 \strokec7 "viewport"\cf5 \strokec5  \cf6 \strokec6 content\cf5 \strokec5 =\cf7 \strokec7 "width=device-width, initial-scale=1.0"\cf2 \strokec2 />\cf5 \cb1 \strokec5 \
+\cb3   \cf2 \strokec2 <\cf4 \strokec4 title\cf2 \strokec2 >\cf5 \strokec5 Flexy Layout Example\cf2 \strokec2 </\cf4 \strokec4 title\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3   \cf2 \strokec2 <\cf4 \strokec4 script\cf8 \strokec8  \cf6 \strokec6 src\cf8 \strokec8 =\cf7 \strokec7 "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"\cf2 \strokec2 ></\cf4 \strokec4 script\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3   \cf2 \strokec2 <\cf4 \strokec4 link\cf5 \strokec5  \cf6 \strokec6 href\cf5 \strokec5 =\cf7 \strokec7 "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"\cf5 \strokec5  \cf6 \strokec6 rel\cf5 \strokec5 =\cf7 \strokec7 "stylesheet"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 style\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 html\cf8 \strokec8  \cf9 \strokec9 body\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 scroll-behavior\cf8 \strokec8 : \cf7 \strokec7 smooth\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 margin\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 padding\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 overflow-x\cf8 \strokec8 : \cf7 \strokec7 hidden\cf8 \strokec8 ; \cf11 \strokec11 /* prevents horizontal scroll */\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background\cf8 \strokec8 : \cf7 \strokec7 #fff\cf8 \strokec8 ; \cf6 \strokec6 margin\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 font-family\cf8 \strokec8 : \cf7 \strokec7 'Montserrat'\cf8 \strokec8 , -apple-system, BlinkMacSystemFont, \cf7 \strokec7 'Segoe UI'\cf8 \strokec8 , Roboto, \cf7 \strokec7 'Helvetica Neue'\cf8 \strokec8 , \cf7 \strokec7 Arial\cf8 \strokec8 , \cf7 \strokec7 sans-serif\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 h1\cf8 \strokec8 , \cf9 \strokec9 h2\cf8 \strokec8 , \cf9 \strokec9 h3\cf8 \strokec8 , \cf9 \strokec9 h4\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 font-family\cf8 \strokec8 : \cf7 \strokec7 'Montserrat'\cf8 \strokec8 , -apple-system, BlinkMacSystemFont, \cf7 \strokec7 'Segoe UI'\cf8 \strokec8 , Roboto, \cf7 \strokec7 'Helvetica Neue'\cf8 \strokec8 , \cf7 \strokec7 Arial\cf8 \strokec8 , \cf7 \strokec7 sans-serif\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 line-height\cf8 \strokec8 : \cf10 \strokec10 1.6\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 h1\cf8 \strokec8  \{ \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 font-size\cf8 \strokec8 : \cf10 \strokec10 2rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 font-weight\cf8 \strokec8 : \cf10 \strokec10 300\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 color\cf8 \strokec8 :\cf7 \strokec7 #fff\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 h2\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 font-size\cf8 \strokec8 : \cf10 \strokec10 2.5rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 font-weight\cf8 \strokec8 : \cf10 \strokec10 300\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 text-align\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 h3\cf8 \strokec8  \{ \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 font-size\cf8 \strokec8 : \cf10 \strokec10 1.25rem\cf8 \strokec8 ; \cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 font-weight\cf8 \strokec8 : \cf10 \strokec10 400\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 text-align\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 color\cf8 \strokec8 :\cf7 \strokec7 #000\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 p\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 font-size\cf8 \strokec8 : \cf10 \strokec10 1rem\cf8 \strokec8 ; \cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 font-weight\cf8 \strokec8 : \cf10 \strokec10 300\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 line-height\cf8 \strokec8 :\cf10 \strokec10 1.3\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 color\cf8 \strokec8 :\cf7 \strokec7 #777\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 #main-container\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 min-height\cf8 \strokec8 : \cf10 \strokec10 100vh\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 margin\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8  \cf7 \strokec7 auto\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 display\cf8 \strokec8 : \cf7 \strokec7 flex\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 flex-direction\cf8 \strokec8 : \cf7 \strokec7 column\cf8 \strokec8 ; \cf6 \strokec6 text-align\cf8 \strokec8 :\cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .scroll-cue\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 position\cf8 \strokec8 : \cf7 \strokec7 absolute\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 bottom\cf8 \strokec8 : \cf10 \strokec10 2rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 left\cf8 \strokec8 : \cf10 \strokec10 50%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 transform\cf8 \strokec8 : \cf12 \strokec12 translateX\cf8 \strokec8 (\cf10 \strokec10 -50%\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 color\cf8 \strokec8 : \cf7 \strokec7 #fff\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 font-size\cf8 \strokec8 : \cf10 \strokec10 1rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 text-decoration\cf8 \strokec8 : \cf7 \strokec7 none\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 opacity\cf8 \strokec8 : \cf10 \strokec10 0.8\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 animation\cf8 \strokec8 : bounce \cf10 \strokec10 2s\cf8 \strokec8  \cf7 \strokec7 infinite\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 font-weight\cf8 \strokec8 : \cf10 \strokec10 300\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb3 \strokec13 @keyframes\cf8 \strokec8  \cf6 \strokec6 bounce\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   0%, 100% \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf6 \strokec6 transform\cf8 \strokec8 : \cf12 \strokec12 translate\cf8 \strokec8 (\cf10 \strokec10 -50%\cf8 \strokec8 , \cf10 \strokec10 0\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \}\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   50% \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf6 \strokec6 transform\cf8 \strokec8 : \cf12 \strokec12 translate\cf8 \strokec8 (\cf10 \strokec10 -50%\cf8 \strokec8 , \cf10 \strokec10 10px\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \}\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Navigation CSS  */\cf5 \cb1 \strokec5 \
+\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8     \cf11 \strokec11 /* Navigation */\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf9 \strokec9 #navigation\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 position\cf8 \strokec8 : \cf7 \strokec7 absolute\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 top\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8 ; \cf6 \strokec6 left\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8 ; \cf6 \strokec6 right\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 height\cf8 \strokec8 : \cf10 \strokec10 100px\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 padding\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8  \cf10 \strokec10 3rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 display\cf8 \strokec8 : \cf7 \strokec7 flex\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 align-items\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 background\cf8 \strokec8 : \cf7 \strokec7 transparent\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 transition\cf8 \strokec8 : \cf14 \strokec14 background\cf8 \strokec8  \cf10 \strokec10 0.3s\cf8 \strokec8  \cf7 \strokec7 ease\cf8 \strokec8 , box-shadow \cf10 \strokec10 0.3s\cf8 \strokec8  \cf7 \strokec7 ease\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 z-index\cf8 \strokec8 : \cf10 \strokec10 10000\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \}\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf9 \strokec9 #navigation.scrolled\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 position\cf8 \strokec8 : \cf7 \strokec7 fixed\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 background\cf8 \strokec8 : \cf7 \strokec7 #fff\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 box-shadow\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8  \cf10 \strokec10 2px\cf8 \strokec8  \cf10 \strokec10 10px\cf8 \strokec8  \cf12 \strokec12 rgba\cf8 \strokec8 (\cf10 \strokec10 0\cf8 \strokec8 ,\cf10 \strokec10 0\cf8 \strokec8 ,\cf10 \strokec10 0\cf8 \strokec8 ,\cf10 \strokec10 0.05\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 color\cf8 \strokec8 : \cf7 \strokec7 #1a1a1a\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \}\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8     \cf9 \strokec9 #navigation-container\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 max-width\cf8 \strokec8 : \cf10 \strokec10 1200px\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 margin\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8  \cf7 \strokec7 auto\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 display\cf8 \strokec8 : \cf7 \strokec7 flex\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 justify-content\cf8 \strokec8 : \cf7 \strokec7 space-between\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 align-items\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \}\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8     \cf9 \strokec9 .nav-logo\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 width\cf8 \strokec8 :\cf10 \strokec10 8rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 transition\cf8 \strokec8 : filter \cf10 \strokec10 0.3s\cf8 \strokec8  \cf7 \strokec7 ease\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \}\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8     \cf9 \strokec9 ul.nav-list\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 list-style\cf8 \strokec8 : \cf7 \strokec7 none\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 margin\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 padding\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 display\cf8 \strokec8 : \cf7 \strokec7 flex\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 gap\cf8 \strokec8 : \cf10 \strokec10 2rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \}\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf9 \strokec9 ul.nav-list\cf8 \strokec8  \cf9 \strokec9 li\cf8 \strokec8  \cf9 \strokec9 a\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 text-decoration\cf8 \strokec8 : \cf7 \strokec7 none\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 color\cf8 \strokec8 : \cf7 \strokec7 inherit\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 font-weight\cf8 \strokec8 : \cf10 \strokec10 500\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 font-size\cf8 \strokec8 : \cf10 \strokec10 0.9375rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 transition\cf8 \strokec8 : \cf7 \strokec7 color\cf8 \strokec8  \cf10 \strokec10 0.3s\cf8 \strokec8  \cf7 \strokec7 ease\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \}\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8     \cf9 \strokec9 #navigation:not\cf8 \strokec8 (\cf9 \strokec9 .scrolled\cf8 \strokec8 ) \cf9 \strokec9 ul.nav-list\cf8 \strokec8  \cf9 \strokec9 li\cf8 \strokec8  \cf9 \strokec9 a\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 color\cf8 \strokec8 : \cf7 \strokec7 #fff\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \}\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8     \cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8     \cf11 \strokec11 /* Sections styling (brief) */\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf9 \strokec9 section\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 max-width\cf8 \strokec8 : \cf10 \strokec10 1200px\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 margin\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8  \cf7 \strokec7 auto\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 padding\cf8 \strokec8 : \cf10 \strokec10 5rem\cf8 \strokec8  \cf10 \strokec10 5%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \}\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8     \cf11 \strokec11 /* Responsive */\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf13 \strokec13 @media\cf8 \strokec8  (\cf6 \strokec6 max-width\cf8 \strokec8 : \cf10 \strokec10 768px\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf9 \strokec9 #navigation\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8         \cf6 \strokec6 height\cf8 \strokec8 : \cf10 \strokec10 70px\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8         \cf6 \strokec6 padding\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8  \cf10 \strokec10 1.5rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \}\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf9 \strokec9 #banner\cf8 \strokec8  \cf9 \strokec9 h1\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8         \cf6 \strokec6 font-size\cf8 \strokec8 : \cf10 \strokec10 1.8rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \}\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf9 \strokec9 ul.nav-list\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8         \cf6 \strokec6 gap\cf8 \strokec8 : \cf10 \strokec10 1rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \}\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \}\cf5 \cb1 \strokec5 \
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Main Banner and Gradient CSS  */\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 #gradient\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100%\cf8 \strokec8 ; \cf6 \strokec6 margin\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8  \cf7 \strokec7 auto\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background\cf8 \strokec8 : \cf7 \strokec7 none\cf8 \strokec8 ; \cf11 \strokec11 /* will be overwritten by JS gradient */\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 #banner\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 border-left\cf8 \strokec8 : \cf10 \strokec10 1px\cf8 \strokec8  \cf7 \strokec7 solid\cf8 \strokec8  \cf7 \strokec7 #00FFFF\cf8 \strokec8 ; \cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 border-right\cf8 \strokec8 : \cf10 \strokec10 1px\cf8 \strokec8  \cf7 \strokec7 solid\cf8 \strokec8  \cf7 \strokec7 #00FFFF\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 90%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 max-width\cf8 \strokec8 : \cf10 \strokec10 1200px\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 margin\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8  \cf7 \strokec7 auto\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 min-height\cf8 \strokec8 : \cf10 \strokec10 100vh\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 display\cf8 \strokec8 : \cf7 \strokec7 flex\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 align-items\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ;   \cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 justify-content\cf8 \strokec8 : \cf7 \strokec7 flex-start\cf8 \strokec8 ; \cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 padding\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8 ;             \cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .banner-wrapper\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 70%\cf8 \strokec8 ; \cf6 \strokec6 max-width\cf8 \strokec8 : \cf10 \strokec10 1200px\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 text-align\cf8 \strokec8 : \cf7 \strokec7 left\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .banner-wrapper\cf8 \strokec8  \cf9 \strokec9 h1\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 font-size\cf8 \strokec8 : \cf10 \strokec10 1.8rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 font-weight\cf8 \strokec8 : \cf10 \strokec10 300\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 color\cf8 \strokec8 : \cf7 \strokec7 #fff\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 line-height\cf8 \strokec8 : \cf10 \strokec10 1.6\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Recent Collaborations CSS  */\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 #collab\cf8 \strokec8  \{ \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100%\cf8 \strokec8 ; \cf6 \strokec6 margin\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8  \cf7 \strokec7 auto\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 padding\cf8 \strokec8 :\cf10 \strokec10 5rem\cf8 \strokec8  \cf10 \strokec10 0\cf8 \strokec8  \cf10 \strokec10 5rem\cf8 \strokec8  \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 #collab-container\cf8 \strokec8  \{ \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 border-left\cf8 \strokec8 : \cf10 \strokec10 1px\cf8 \strokec8  \cf7 \strokec7 solid\cf8 \strokec8  \cf7 \strokec7 #00FFFF\cf8 \strokec8 ; \cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 border-right\cf8 \strokec8 : \cf10 \strokec10 1px\cf8 \strokec8  \cf7 \strokec7 solid\cf8 \strokec8  \cf7 \strokec7 #00FFFF\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 90%\cf8 \strokec8 ; \cf6 \strokec6 max-width\cf8 \strokec8 : \cf10 \strokec10 1200px\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 margin\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8  \cf7 \strokec7 auto\cf8 \strokec8 ; \cf6 \strokec6 padding\cf8 \strokec8 : \cf10 \strokec10 0rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .collab-grid\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 display\cf8 \strokec8 : \cf7 \strokec7 flex\cf8 \strokec8 ; \cf6 \strokec6 justify-content\cf8 \strokec8 : \cf7 \strokec7 space-between\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 flex-wrap\cf8 \strokec8 : \cf7 \strokec7 wrap\cf8 \strokec8 ; \cf6 \strokec6 gap\cf8 \strokec8 : \cf10 \strokec10 1rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .section-intro\cf8 \strokec8  \{ \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 display\cf8 \strokec8 : \cf7 \strokec7 flex\cf8 \strokec8 ; \cf6 \strokec6 justify-content\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ; \cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 text-align\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ; \cf6 \strokec6 align-items\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 flex-direction\cf8 \strokec8 : \cf7 \strokec7 column\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 margin-bottom\cf8 \strokec8 : \cf10 \strokec10 2rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .section-heading\cf8 \strokec8  \{ \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 :\cf10 \strokec10 80%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .section-paragraph\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 :\cf10 \strokec10 80%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \} \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .collab-wrapper\cf8 \strokec8  \cf9 \strokec9 h3\cf8 \strokec8  \{ \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 padding\cf8 \strokec8 :\cf10 \strokec10 0\cf8 \strokec8 ; \cf6 \strokec6 margin\cf8 \strokec8 :\cf10 \strokec10 0\cf8 \strokec8 ; \cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .collab-wrapper\cf8 \strokec8  \cf9 \strokec9 p\cf8 \strokec8  \{ \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 padding\cf8 \strokec8 :\cf10 \strokec10 0\cf8 \strokec8 ; \cf6 \strokec6 margin\cf8 \strokec8 :\cf10 \strokec10 0\cf8 \strokec8 ; \cf6 \strokec6 font-size\cf8 \strokec8 : \cf10 \strokec10 0.95rem\cf8 \strokec8 ; \cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Each wrapper holds an image and a summary */\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .collab-wrapper\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 display\cf8 \strokec8 : \cf7 \strokec7 flex\cf8 \strokec8 ; \cf6 \strokec6 flex-direction\cf8 \strokec8 : \cf7 \strokec7 column\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 25%\cf8 \strokec8 ; \cf11 \strokec11 /* 3 in a row */\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 box-sizing\cf8 \strokec8 : \cf7 \strokec7 border-box\cf8 \strokec8 ; \cf6 \strokec6 gap\cf8 \strokec8 : \cf10 \strokec10 1rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Image block styles */\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .collab-image-block\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100%\cf8 \strokec8 ; \cf6 \strokec6 min-height\cf8 \strokec8 : \cf10 \strokec10 243px\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 border-radius\cf8 \strokec8 : \cf10 \strokec10 0.5rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 transition\cf8 \strokec8 : transform \cf10 \strokec10 0.3s\cf8 \strokec8  \cf7 \strokec7 ease\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 will-change\cf8 \strokec8 : transform;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .collab-image-block:hover\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 transform\cf8 \strokec8 : \cf12 \strokec12 scale\cf8 \strokec8 (\cf10 \strokec10 1.03\cf8 \strokec8 ); \cf6 \strokec6 cursor\cf8 \strokec8 : \cf7 \strokec7 pointer\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Backgrounds */\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .collab-block-01\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background\cf8 \strokec8 : \cf7 \strokec7 #ff835e\cf8 \strokec8  \cf12 \strokec12 url\cf8 \strokec8 (\cf7 \strokec7 "http://madebyliam.co/img/icons/housmans.png"\cf8 \strokec8 ) \cf7 \strokec7 no-repeat\cf8 \strokec8  \cf7 \strokec7 center\cf8 \strokec8  \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background-size\cf8 \strokec8 : \cf10 \strokec10 11rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .collab-block-02\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background\cf8 \strokec8 : \cf7 \strokec7 #1a72d4\cf8 \strokec8  \cf12 \strokec12 url\cf8 \strokec8 (\cf7 \strokec7 "http://madebyliam.co/img/icons/a2b.png"\cf8 \strokec8 ) \cf7 \strokec7 no-repeat\cf8 \strokec8  \cf7 \strokec7 center\cf8 \strokec8  \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background-size\cf8 \strokec8 : \cf10 \strokec10 11rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .collab-block-03\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background\cf8 \strokec8 : \cf7 \strokec7 #007f65\cf8 \strokec8  \cf12 \strokec12 url\cf8 \strokec8 (\cf7 \strokec7 "http://madebyliam.co/img/icons/celtic.png"\cf8 \strokec8 ) \cf7 \strokec7 no-repeat\cf8 \strokec8  \cf7 \strokec7 center\cf8 \strokec8  \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background-size\cf8 \strokec8 : \cf10 \strokec10 11rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* \uc0\u55357 \u56561  Mobile: stack all 3 vertically */\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb3 \strokec13 @media\cf8 \strokec8  (\cf6 \strokec6 max-width\cf8 \strokec8 : \cf10 \strokec10 768px\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 #collab-container\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 flex-direction\cf8 \strokec8 : \cf7 \strokec7 column\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 align-items\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .collab-wrapper\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\
+\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Think your brand\'92s doing its job? CSS  */\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 #your-brand\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100vw\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 display\cf8 \strokec8 : \cf7 \strokec7 flex\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 justify-content\cf8 \strokec8 :\cf7 \strokec7 flex-start\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background\cf8 \strokec8 :\cf7 \strokec7 #f4f4f4\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 padding\cf8 \strokec8 : \cf10 \strokec10 5rem\cf8 \strokec8  \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 box-sizing\cf8 \strokec8 : \cf7 \strokec7 border-box\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 overflow-x\cf8 \strokec8 : \cf7 \strokec7 hidden\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 text-align\cf8 \strokec8 :\cf7 \strokec7 left\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 #your-brand-container\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 border-left\cf8 \strokec8 : \cf10 \strokec10 1px\cf8 \strokec8  \cf7 \strokec7 solid\cf8 \strokec8  \cf7 \strokec7 #00FFFF\cf8 \strokec8 ; \cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 border-right\cf8 \strokec8 : \cf10 \strokec10 1px\cf8 \strokec8  \cf7 \strokec7 solid\cf8 \strokec8  \cf7 \strokec7 #00FFFF\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 margin\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8  \cf7 \strokec7 auto\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 padding\cf8 \strokec8 :\cf10 \strokec10 0\cf8 \strokec8 ;  \cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Shared styles */\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .your-brand-block\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 50%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 padding\cf8 \strokec8 : \cf10 \strokec10 0.5rem\cf8 \strokec8 ; \cf11 \strokec11 /* small padding for breathing room */\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background\cf8 \strokec8 : \cf7 \strokec7 #fff\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 box-sizing\cf8 \strokec8 : \cf7 \strokec7 border-box\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 display\cf8 \strokec8 : \cf7 \strokec7 flex\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 justify-content\cf8 \strokec8 : \cf7 \strokec7 flex-start\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 align-items\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Container to ensure perfect stacking */\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .your-brand-blocks\cf8 \strokec8  \{ \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 display\cf8 \strokec8 : \cf7 \strokec7 flex\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 justify-content\cf8 \strokec8 : \cf7 \strokec7 flex-start\cf8 \strokec8 ; \cf6 \strokec6 align-items\cf8 \strokec8 :\cf7 \strokec7 left\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 gap\cf8 \strokec8 : \cf10 \strokec10 0rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Laptop image block */\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .your-brand-block-01\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 max-width\cf8 \strokec8 : \cf10 \strokec10 750px\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 height\cf8 \strokec8 : \cf10 \strokec10 510px\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 margin\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 padding\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background-image\cf8 \strokec8 : \cf12 \strokec12 url\cf8 \strokec8 (\cf7 \strokec7 "http://madebyliam.co/img/your-brand-block-01.png"\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background-repeat\cf8 \strokec8 : \cf7 \strokec7 no-repeat\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background-position\cf8 \strokec8 : \cf7 \strokec7 left\cf8 \strokec8  \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background-size\cf8 \strokec8 : \cf7 \strokec7 cover\cf8 \strokec8 ; \cf11 \strokec11 /* KEY CHANGE */\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 box-sizing\cf8 \strokec8 : \cf7 \strokec7 border-box\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Block right of laptop */\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .your-brand-block-02\cf8 \strokec8  \{ \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 40%\cf8 \strokec8 ; \cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 margin\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 box-sizing\cf8 \strokec8 : \cf7 \strokec7 border-box\cf8 \strokec8 ; \cf6 \strokec6 margin-left\cf8 \strokec8 :\cf10 \strokec10 1.5rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .your-brand-block-02-01\cf8 \strokec8  \{ \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 margin-bottom\cf8 \strokec8 :\cf10 \strokec10 3rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .your-brand-block-02-02\cf8 \strokec8  \{ \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background\cf8 \strokec8 :\cf7 \strokec7 none\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Heading inside block right of laptop */\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .your-brand-block-02\cf8 \strokec8  \cf9 \strokec9 h3\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 text-align\cf8 \strokec8 :\cf7 \strokec7 left\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 margin-bottom\cf8 \strokec8 : \cf10 \strokec10 0.5rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Paragraph inside block right of laptop */\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .your-brand-block-02\cf8 \strokec8  \cf9 \strokec9 p\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8    \cf6 \strokec6 line-height\cf8 \strokec8 : \cf10 \strokec10 1.5\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 margin-bottom\cf8 \strokec8 : \cf10 \strokec10 1rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Responsive */\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb3 \strokec13 @media\cf8 \strokec8  (\cf6 \strokec6 max-width\cf8 \strokec8 : \cf10 \strokec10 768px\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 #your-brand\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 flex-direction\cf8 \strokec8 : \cf7 \strokec7 column\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 gap\cf8 \strokec8 : \cf10 \strokec10 1rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .your-brand-blocks\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 flex-direction\cf8 \strokec8 : \cf7 \strokec7 column\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 align-items\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \} \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .your-brand-block\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 flex\cf8 \strokec8 : \cf10 \strokec10 1\cf8 \strokec8  \cf10 \strokec10 1\cf8 \strokec8  \cf10 \strokec10 100%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Your Brand, Step by Step CSS  */\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 #process\cf8 \strokec8  \{ \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100%\cf8 \strokec8 ; \cf6 \strokec6 margin\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8  \cf7 \strokec7 auto\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 padding\cf8 \strokec8 :\cf10 \strokec10 5rem\cf8 \strokec8  \cf10 \strokec10 0\cf8 \strokec8  \cf10 \strokec10 5rem\cf8 \strokec8  \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 #process-container\cf8 \strokec8  \{ \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 border-left\cf8 \strokec8 : \cf10 \strokec10 1px\cf8 \strokec8  \cf7 \strokec7 solid\cf8 \strokec8  \cf7 \strokec7 #00FFFF\cf8 \strokec8 ; \cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 border-right\cf8 \strokec8 : \cf10 \strokec10 1px\cf8 \strokec8  \cf7 \strokec7 solid\cf8 \strokec8  \cf7 \strokec7 #00FFFF\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 90%\cf8 \strokec8 ; \cf6 \strokec6 max-width\cf8 \strokec8 : \cf10 \strokec10 1200px\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 margin\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8  \cf7 \strokec7 auto\cf8 \strokec8 ; \cf6 \strokec6 padding\cf8 \strokec8 : \cf10 \strokec10 0rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .process-grid\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 display\cf8 \strokec8 : \cf7 \strokec7 flex\cf8 \strokec8 ; \cf6 \strokec6 justify-content\cf8 \strokec8 : \cf7 \strokec7 space-between\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 flex-wrap\cf8 \strokec8 : \cf7 \strokec7 wrap\cf8 \strokec8 ; \cf6 \strokec6 gap\cf8 \strokec8 : \cf10 \strokec10 1rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .section-intro\cf8 \strokec8  \{ \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 display\cf8 \strokec8 : \cf7 \strokec7 flex\cf8 \strokec8 ; \cf6 \strokec6 justify-content\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ; \cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 text-align\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ; \cf6 \strokec6 align-items\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 flex-direction\cf8 \strokec8 : \cf7 \strokec7 column\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 margin-bottom\cf8 \strokec8 : \cf10 \strokec10 2rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .section-heading\cf8 \strokec8  \{ \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 :\cf10 \strokec10 80%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .section-paragraph\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 :\cf10 \strokec10 80%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \} \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .process-wrapper\cf8 \strokec8  \cf9 \strokec9 h3\cf8 \strokec8  \{ \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 padding\cf8 \strokec8 :\cf10 \strokec10 0\cf8 \strokec8 ; \cf6 \strokec6 margin\cf8 \strokec8 :\cf10 \strokec10 0\cf8 \strokec8 ; \cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .process-wrapper\cf8 \strokec8  \cf9 \strokec9 p\cf8 \strokec8  \{ \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 padding\cf8 \strokec8 :\cf10 \strokec10 0\cf8 \strokec8 ; \cf6 \strokec6 margin\cf8 \strokec8 :\cf10 \strokec10 0\cf8 \strokec8 ; \cf6 \strokec6 font-size\cf8 \strokec8 : \cf10 \strokec10 0.95rem\cf8 \strokec8 ; \cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Each wrapper holds an image and a summary */\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .process-wrapper\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 display\cf8 \strokec8 : \cf7 \strokec7 flex\cf8 \strokec8 ; \cf6 \strokec6 flex-direction\cf8 \strokec8 : \cf7 \strokec7 column\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 25%\cf8 \strokec8 ; \cf11 \strokec11 /* 3 in a row */\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 box-sizing\cf8 \strokec8 : \cf7 \strokec7 border-box\cf8 \strokec8 ; \cf6 \strokec6 gap\cf8 \strokec8 : \cf10 \strokec10 1rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Image block styles */\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .process-image-block\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100%\cf8 \strokec8 ; \cf6 \strokec6 min-height\cf8 \strokec8 : \cf10 \strokec10 243px\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 border-radius\cf8 \strokec8 : \cf10 \strokec10 0.5rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 transition\cf8 \strokec8 : transform \cf10 \strokec10 0.3s\cf8 \strokec8  \cf7 \strokec7 ease\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 will-change\cf8 \strokec8 : transform;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Backgrounds */\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .process-block-01\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background\cf8 \strokec8 : \cf7 \strokec7 #ff835e\cf8 \strokec8  \cf12 \strokec12 url\cf8 \strokec8 (\cf7 \strokec7 "http://madebyliam.co/img/icons/housmans.png"\cf8 \strokec8 ) \cf7 \strokec7 no-repeat\cf8 \strokec8  \cf7 \strokec7 center\cf8 \strokec8  \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background-size\cf8 \strokec8 : \cf10 \strokec10 11rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .process-block-02\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background\cf8 \strokec8 : \cf7 \strokec7 #1a72d4\cf8 \strokec8  \cf12 \strokec12 url\cf8 \strokec8 (\cf7 \strokec7 "http://madebyliam.co/img/icons/a2b.png"\cf8 \strokec8 ) \cf7 \strokec7 no-repeat\cf8 \strokec8  \cf7 \strokec7 center\cf8 \strokec8  \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background-size\cf8 \strokec8 : \cf10 \strokec10 11rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .process-block-03\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background\cf8 \strokec8 : \cf12 \strokec12 url\cf8 \strokec8 (\cf7 \strokec7 "http://madebyliam.co/img/steps-03.jpg"\cf8 \strokec8 ) \cf7 \strokec7 no-repeat\cf8 \strokec8  \cf7 \strokec7 center\cf8 \strokec8  \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background-size\cf8 \strokec8 : \cf10 \strokec10 100%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* \uc0\u55357 \u56561  Mobile: stack all 3 vertically */\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb3 \strokec13 @media\cf8 \strokec8  (\cf6 \strokec6 max-width\cf8 \strokec8 : \cf10 \strokec10 768px\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 #process-container\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 flex-direction\cf8 \strokec8 : \cf7 \strokec7 column\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 align-items\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .process-wrapper\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Call to Action CSS  */\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 #cta\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 min-height\cf8 \strokec8 : \cf10 \strokec10 60vh\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 display\cf8 \strokec8 : \cf7 \strokec7 flex\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 align-items\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 justify-content\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 text-align\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 color\cf8 \strokec8 : \cf7 \strokec7 white\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 padding\cf8 \strokec8 : \cf10 \strokec10 5rem\cf8 \strokec8  \cf10 \strokec10 1rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 #cta-container\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 90%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 max-width\cf8 \strokec8 : \cf10 \strokec10 1000px\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 margin\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8  \cf7 \strokec7 auto\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .section-heading\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 font-size\cf8 \strokec8 : \cf10 \strokec10 2rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 margin-bottom\cf8 \strokec8 : \cf10 \strokec10 1rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .section-paragraph\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 font-size\cf8 \strokec8 : \cf10 \strokec10 1rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 max-width\cf8 \strokec8 : \cf10 \strokec10 700px\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 margin\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8  \cf7 \strokec7 auto\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .cta-blocks\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 margin-top\cf8 \strokec8 : \cf10 \strokec10 2rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .cta-block\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background\cf8 \strokec8 :\cf7 \strokec7 red\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 padding\cf8 \strokec8 : \cf10 \strokec10 1.5rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 border-radius\cf8 \strokec8 : \cf10 \strokec10 0.5rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 backdrop-filter\cf8 \strokec8 : \cf12 \strokec12 blur\cf8 \strokec8 (\cf10 \strokec10 5px\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Responsive */\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb3 \strokec13 @media\cf8 \strokec8  (\cf6 \strokec6 max-width\cf8 \strokec8 : \cf10 \strokec10 768px\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 #cta\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 flex-direction\cf8 \strokec8 : \cf7 \strokec7 column\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 gap\cf8 \strokec8 : \cf10 \strokec10 1rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .cta-blocks\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 flex-direction\cf8 \strokec8 : \cf7 \strokec7 column\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 align-items\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \} \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .cta-block\cf8 \strokec8  \{ \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 flex\cf8 \strokec8 : \cf10 \strokec10 1\cf8 \strokec8  \cf10 \strokec10 1\cf8 \strokec8  \cf10 \strokec10 100%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Now Spinning CSS  */\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 #personal\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100vw\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 display\cf8 \strokec8 : \cf7 \strokec7 flex\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 justify-content\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background\cf8 \strokec8 :\cf7 \strokec7 #fff\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 padding\cf8 \strokec8 : \cf10 \strokec10 5rem\cf8 \strokec8  \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 box-sizing\cf8 \strokec8 : \cf7 \strokec7 border-box\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 overflow-x\cf8 \strokec8 : \cf7 \strokec7 hidden\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 #personal-container\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 border-left\cf8 \strokec8 : \cf10 \strokec10 1px\cf8 \strokec8  \cf7 \strokec7 solid\cf8 \strokec8  \cf7 \strokec7 #00FFFF\cf8 \strokec8 ; \cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 border-right\cf8 \strokec8 : \cf10 \strokec10 1px\cf8 \strokec8  \cf7 \strokec7 solid\cf8 \strokec8  \cf7 \strokec7 #00FFFF\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 90%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 max-width\cf8 \strokec8 : \cf10 \strokec10 1200px\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 margin\cf8 \strokec8 : \cf10 \strokec10 0\cf8 \strokec8  \cf7 \strokec7 auto\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 padding\cf8 \strokec8 :\cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Shared styles */\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .personal-block\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 :\cf10 \strokec10 50%\cf8 \strokec8 ; \cf6 \strokec6 padding\cf8 \strokec8 : \cf10 \strokec10 1rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background\cf8 \strokec8 : \cf7 \strokec7 #fff\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 box-sizing\cf8 \strokec8 : \cf7 \strokec7 border-box\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Unique styles per block */\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .personal-block-01\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background\cf8 \strokec8 : \cf7 \strokec7 #dadada\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .personal-block-02\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 background\cf8 \strokec8 : \cf7 \strokec7 #dadada\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .personal-blocks\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 display\cf8 \strokec8 : \cf7 \strokec7 flex\cf8 \strokec8 ; \cf6 \strokec6 justify-content\cf8 \strokec8 : \cf7 \strokec7 space-between\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100%\cf8 \strokec8 ; \cf6 \strokec6 gap\cf8 \strokec8 : \cf10 \strokec10 1rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 /* Responsive */\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb3 \strokec13 @media\cf8 \strokec8  (\cf6 \strokec6 max-width\cf8 \strokec8 : \cf10 \strokec10 768px\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 #personal-brand\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 flex-direction\cf8 \strokec8 : \cf7 \strokec7 column\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 gap\cf8 \strokec8 : \cf10 \strokec10 1rem\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .personal-blocks\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 flex-direction\cf8 \strokec8 : \cf7 \strokec7 column\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 align-items\cf8 \strokec8 : \cf7 \strokec7 center\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \} \cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \cb3 \strokec9 .personal-block\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 flex\cf8 \strokec8 : \cf10 \strokec10 1\cf8 \strokec8  \cf10 \strokec10 1\cf8 \strokec8  \cf10 \strokec10 100%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf6 \strokec6 width\cf8 \strokec8 : \cf10 \strokec10 100%\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 style\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 script\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 gradients\cf8 \strokec8  = [\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   [\cf7 \strokec7 "#5153f0"\cf8 \strokec8 , \cf7 \strokec7 "#4b7fd3"\cf8 \strokec8 , \cf7 \strokec7 "#52a8bf"\cf8 \strokec8 ],  \cf11 \strokec11 // green, yellow, blue\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   [\cf7 \strokec7 "#00cff5"\cf8 \strokec8 , \cf7 \strokec7 "#15f2aa"\cf8 \strokec8 , \cf7 \strokec7 "#5bfd77"\cf8 \strokec8 ],  \cf11 \strokec11 // green, yellow, violet\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   [\cf7 \strokec7 "#ef31a5"\cf8 \strokec8 , \cf7 \strokec7 "#ff534b"\cf8 \strokec8 , \cf7 \strokec7 "#ff9b04"\cf8 \strokec8 ],  \cf11 \strokec11 // pink shades and purple\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   [\cf7 \strokec7 "#a035fc"\cf8 \strokec8 , \cf7 \strokec7 "#dc3add"\cf8 \strokec8 , \cf7 \strokec7 "#ff51a7"\cf8 \strokec8 ],  \cf11 \strokec11 // green, gold, red-pink\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 ];\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 step\cf8 \strokec8  = \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf4 \cb3 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 gradientSpeed\cf8 \strokec8  = \cf10 \strokec10 0.001\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf4 \cb3 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 current\cf8 \strokec8  = \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf4 \cb3 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 next\cf8 \strokec8  = \cf10 \strokec10 1\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\
+\cf4 \cb3 \strokec4 function\cf8 \strokec8  \cf12 \strokec12 hexToRgb\cf8 \strokec8 (\cf6 \strokec6 hex\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 bigint\cf8 \strokec8  = \cf12 \strokec12 parseInt\cf8 \strokec8 (\cf6 \strokec6 hex\cf8 \strokec8 .\cf12 \strokec12 slice\cf8 \strokec8 (\cf10 \strokec10 1\cf8 \strokec8 ), \cf10 \strokec10 16\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf13 \strokec13 return\cf8 \strokec8  [(\cf6 \strokec6 bigint\cf8 \strokec8  >> \cf10 \strokec10 16\cf8 \strokec8 ) & \cf10 \strokec10 255\cf8 \strokec8 , (\cf6 \strokec6 bigint\cf8 \strokec8  >> \cf10 \strokec10 8\cf8 \strokec8 ) & \cf10 \strokec10 255\cf8 \strokec8 , \cf6 \strokec6 bigint\cf8 \strokec8  & \cf10 \strokec10 255\cf8 \strokec8 ];\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 function\cf8 \strokec8  \cf12 \strokec12 interpolateColor\cf8 \strokec8 (\cf6 \strokec6 c1\cf8 \strokec8 , \cf6 \strokec6 c2\cf8 \strokec8 , \cf6 \strokec6 factor\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf13 \strokec13 return\cf8 \strokec8  \cf6 \strokec6 c1\cf8 \strokec8 .\cf12 \strokec12 map\cf8 \strokec8 ((\cf6 \strokec6 val\cf8 \strokec8 , \cf6 \strokec6 i\cf8 \strokec8 ) \cf4 \strokec4 =>\cf8 \strokec8  \cf6 \strokec6 Math\cf8 \strokec8 .\cf12 \strokec12 round\cf8 \strokec8 (\cf6 \strokec6 val\cf8 \strokec8  * (\cf10 \strokec10 1\cf8 \strokec8  - \cf6 \strokec6 factor\cf8 \strokec8 ) + \cf6 \strokec6 c2\cf8 \strokec8 [\cf6 \strokec6 i\cf8 \strokec8 ] * \cf6 \strokec6 factor\cf8 \strokec8 ));\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 function\cf8 \strokec8  \cf12 \strokec12 rgbToCss\cf8 \strokec8 (\cf6 \strokec6 rgb\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf13 \strokec13 return\cf8 \strokec8  \cf7 \strokec7 "rgb("\cf8 \strokec8  + \cf6 \strokec6 rgb\cf8 \strokec8 .\cf12 \strokec12 join\cf8 \strokec8 (\cf7 \strokec7 ","\cf8 \strokec8 ) + \cf7 \strokec7 ")"\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 function\cf8 \strokec8  \cf12 \strokec12 updateGradient\cf8 \strokec8 () \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf13 \strokec13 if\cf8 \strokec8  (\cf4 \strokec4 typeof\cf8 \strokec8  \cf15 \strokec15 $\cf8 \strokec8  === \cf7 \strokec7 'undefined'\cf8 \strokec8 ) \cf13 \strokec13 return\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 currentStart\cf8 \strokec8  = \cf12 \strokec12 hexToRgb\cf8 \strokec8 (\cf6 \strokec6 gradients\cf8 \strokec8 [\cf6 \strokec6 current\cf8 \strokec8 ][\cf10 \strokec10 0\cf8 \strokec8 ]);\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 currentMid\cf8 \strokec8  = \cf12 \strokec12 hexToRgb\cf8 \strokec8 (\cf6 \strokec6 gradients\cf8 \strokec8 [\cf6 \strokec6 current\cf8 \strokec8 ][\cf10 \strokec10 1\cf8 \strokec8 ]);\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 currentEnd\cf8 \strokec8  = \cf12 \strokec12 hexToRgb\cf8 \strokec8 (\cf6 \strokec6 gradients\cf8 \strokec8 [\cf6 \strokec6 current\cf8 \strokec8 ][\cf10 \strokec10 2\cf8 \strokec8 ]);\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 nextStart\cf8 \strokec8  = \cf12 \strokec12 hexToRgb\cf8 \strokec8 (\cf6 \strokec6 gradients\cf8 \strokec8 [\cf6 \strokec6 next\cf8 \strokec8 ][\cf10 \strokec10 0\cf8 \strokec8 ]);\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 nextMid\cf8 \strokec8  = \cf12 \strokec12 hexToRgb\cf8 \strokec8 (\cf6 \strokec6 gradients\cf8 \strokec8 [\cf6 \strokec6 next\cf8 \strokec8 ][\cf10 \strokec10 1\cf8 \strokec8 ]);\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 nextEnd\cf8 \strokec8  = \cf12 \strokec12 hexToRgb\cf8 \strokec8 (\cf6 \strokec6 gradients\cf8 \strokec8 [\cf6 \strokec6 next\cf8 \strokec8 ][\cf10 \strokec10 2\cf8 \strokec8 ]);\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 blendedStart\cf8 \strokec8  = \cf12 \strokec12 rgbToCss\cf8 \strokec8 (\cf12 \strokec12 interpolateColor\cf8 \strokec8 (\cf6 \strokec6 currentStart\cf8 \strokec8 , \cf6 \strokec6 nextStart\cf8 \strokec8 , \cf6 \strokec6 step\cf8 \strokec8 ));\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 blendedMid\cf8 \strokec8  = \cf12 \strokec12 rgbToCss\cf8 \strokec8 (\cf12 \strokec12 interpolateColor\cf8 \strokec8 (\cf6 \strokec6 currentMid\cf8 \strokec8 , \cf6 \strokec6 nextMid\cf8 \strokec8 , \cf6 \strokec6 step\cf8 \strokec8 ));\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 blendedEnd\cf8 \strokec8  = \cf12 \strokec12 rgbToCss\cf8 \strokec8 (\cf12 \strokec12 interpolateColor\cf8 \strokec8 (\cf6 \strokec6 currentEnd\cf8 \strokec8 , \cf6 \strokec6 nextEnd\cf8 \strokec8 , \cf6 \strokec6 step\cf8 \strokec8 ));\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf12 \strokec12 $\cf8 \strokec8 (\cf7 \strokec7 '#gradient'\cf8 \strokec8 ).\cf12 \strokec12 css\cf8 \strokec8 (\{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf6 \strokec6 background:\cf8 \strokec8  \cf7 \strokec7 `linear-gradient(45deg, \cf4 \strokec4 $\{\cf6 \strokec6 blendedStart\cf4 \strokec4 \}\cf7 \strokec7 , \cf4 \strokec4 $\{\cf6 \strokec6 blendedMid\cf4 \strokec4 \}\cf7 \strokec7 , \cf4 \strokec4 $\{\cf6 \strokec6 blendedEnd\cf4 \strokec4 \}\cf7 \strokec7 )`\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \});\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf6 \strokec6 step\cf8 \strokec8  += \cf6 \strokec6 gradientSpeed\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf13 \strokec13 if\cf8 \strokec8  (\cf6 \strokec6 step\cf8 \strokec8  >= \cf10 \strokec10 1\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf6 \strokec6 step\cf8 \strokec8  = \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf6 \strokec6 current\cf8 \strokec8  = \cf6 \strokec6 next\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf6 \strokec6 next\cf8 \strokec8  = (\cf6 \strokec6 next\cf8 \strokec8  + \cf10 \strokec10 1\cf8 \strokec8 ) % \cf6 \strokec6 gradients\cf8 \strokec8 .\cf6 \strokec6 length\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \}\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf12 \cb3 \strokec12 setInterval\cf8 \strokec8 (\cf12 \strokec12 updateGradient\cf8 \strokec8 , \cf10 \strokec10 10\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 script\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 script\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf6 \strokec6 window\cf8 \strokec8 .\cf12 \strokec12 addEventListener\cf8 \strokec8 (\cf7 \strokec7 'scroll'\cf8 \strokec8 , \cf4 \strokec4 function\cf8 \strokec8 () \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf4 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 nav\cf8 \strokec8  = \cf6 \strokec6 document\cf8 \strokec8 .\cf12 \strokec12 getElementById\cf8 \strokec8 (\cf7 \strokec7 'navigation'\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf4 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 banner\cf8 \strokec8  = \cf6 \strokec6 document\cf8 \strokec8 .\cf12 \strokec12 getElementById\cf8 \strokec8 (\cf7 \strokec7 'banner'\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf4 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 bannerHeight\cf8 \strokec8  = \cf15 \strokec15 banner\cf8 \strokec8 .\cf6 \strokec6 offsetHeight\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8     \cf13 \strokec13 if\cf8 \strokec8  (\cf6 \strokec6 window\cf8 \strokec8 .\cf6 \strokec6 scrollY\cf8 \strokec8  > \cf15 \strokec15 bannerHeight\cf8 \strokec8  - \cf10 \strokec10 10\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf15 \strokec15 nav\cf8 \strokec8 .\cf6 \strokec6 classList\cf8 \strokec8 .\cf12 \strokec12 add\cf8 \strokec8 (\cf7 \strokec7 'scrolled'\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \} \cf13 \strokec13 else\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf15 \strokec15 nav\cf8 \strokec8 .\cf6 \strokec6 classList\cf8 \strokec8 .\cf12 \strokec12 remove\cf8 \strokec8 (\cf7 \strokec7 'scrolled'\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \}\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \});\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 script\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\
+\
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 head\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 body\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 id\cf5 \strokec5 =\cf7 \strokec7 "main-container"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 id\cf5 \strokec5 =\cf7 \strokec7 "navigation"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3     \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 id\cf5 \strokec5 =\cf7 \strokec7 "navigation-container"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3       \cf2 \strokec2 <\cf4 \strokec4 img\cf5 \strokec5  \cf6 \strokec6 id\cf5 \strokec5 =\cf7 \strokec7 "nav-logo"\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "nav-logo"\cf5 \strokec5  \cf6 \strokec6 src\cf5 \strokec5 =\cf7 \strokec7 "http://madebyliam.co/img/head-logo-01.png"\cf5 \strokec5  \cf6 \strokec6 alt\cf5 \strokec5 =\cf7 \strokec7 "Logo"\cf5 \strokec5  \cf2 \strokec2 />\cf5 \cb1 \strokec5 \
+\cb3       \cf2 \strokec2 <\cf4 \strokec4 nav\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 ul\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "nav-list"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3           \cf2 \strokec2 <\cf4 \strokec4 li\cf2 \strokec2 ><\cf4 \strokec4 a\cf5 \strokec5  \cf6 \strokec6 href\cf5 \strokec5 =\cf7 \strokec7 "#"\cf2 \strokec2 >\cf5 \strokec5 Work\cf2 \strokec2 </\cf4 \strokec4 a\cf2 \strokec2 ></\cf4 \strokec4 li\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3           \cf2 \strokec2 <\cf4 \strokec4 li\cf2 \strokec2 ><\cf4 \strokec4 a\cf5 \strokec5  \cf6 \strokec6 href\cf5 \strokec5 =\cf7 \strokec7 "#"\cf2 \strokec2 >\cf5 \strokec5 About\cf2 \strokec2 </\cf4 \strokec4 a\cf2 \strokec2 ></\cf4 \strokec4 li\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3           \cf2 \strokec2 <\cf4 \strokec4 li\cf2 \strokec2 ><\cf4 \strokec4 a\cf5 \strokec5  \cf6 \strokec6 href\cf5 \strokec5 =\cf7 \strokec7 "#"\cf2 \strokec2 >\cf5 \strokec5 Contact\cf2 \strokec2 </\cf4 \strokec4 a\cf2 \strokec2 ></\cf4 \strokec4 li\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 </\cf4 \strokec4 ul\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3       \cf2 \strokec2 </\cf4 \strokec4 nav\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3   \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 id\cf5 \strokec5 =\cf7 \strokec7 "gradient"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3   \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 id\cf5 \strokec5 =\cf7 \strokec7 "banner"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 <\cf4 \strokec4 h1\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "banner-wrapper"\cf2 \strokec2 >\cf5 \strokec5 Hello. I\'92m Liam.\cf2 \strokec2 <\cf4 \strokec4 br\cf2 \strokec2 >\cf5 \strokec5 I\'92m an experienced UI and brand designer based in Shrewsbury. I specialise in creating hand-crafted, user-friendly websites and digital products that help local businesses stand out with confidence and clarity.\cf2 \strokec2 </\cf4 \strokec4 h1\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3   \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 a\cf5 \strokec5  \cf6 \strokec6 href\cf5 \strokec5 =\cf7 \strokec7 "#collab"\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "scroll-cue"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3   \uc0\u8595  Scroll to see work\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 a\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 id\cf5 \strokec5 =\cf7 \strokec7 "collab"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3   \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 id\cf5 \strokec5 =\cf7 \strokec7 "collab-container"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3     \cb1 \
+\cb3     \cf11 \strokec11 <!-- Section Intro -->\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "section-intro"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3       \cf2 \strokec2 <\cf4 \strokec4 h2\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "section-heading"\cf2 \strokec2 >\cf5 \strokec5 Recent Collaborations\cf2 \strokec2 </\cf4 \strokec4 h2\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3       \cf2 \strokec2 <\cf4 \strokec4 p\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "section-paragraph"\cf2 \strokec2 >\cf5 \strokec5 Here are a few recent projects where I have teamed up with local businesses to create brands thst really click, bringing clear, friendly design that connects with their audience.\cf2 \strokec2 </\cf4 \strokec4 p\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cb3     \cf11 \strokec11 <!-- Collaborations Grid -->\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "collab-grid"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3       \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "collab-wrapper"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "collab-image-block collab-block-01"\cf2 \strokec2 ></\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 h3\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "collab-summary-block"\cf2 \strokec2 >\cf5 \strokec5 Housmans\cf2 \strokec2 </\cf4 \strokec4 h3\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 p\cf2 \strokec2 >\cf5 \strokec5 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore\cf2 \strokec2 </\cf4 \strokec4 p\cf2 \strokec2 >\cf5 \strokec5      \cb1 \
+\cb3       \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "collab-wrapper"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "collab-image-block collab-block-02"\cf2 \strokec2 ></\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 h3\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "collab-summary-block"\cf2 \strokec2 >\cf5 \strokec5 A2B Travel\cf2 \strokec2 </\cf4 \strokec4 h3\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 p\cf2 \strokec2 >\cf5 \strokec5 Dolore et magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris un nisi\cf2 \strokec2 </\cf4 \strokec4 p\cf2 \strokec2 >\cf5 \strokec5      \cb1 \
+\cb3       \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "collab-wrapper"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "collab-image-block collab-block-03"\cf2 \strokec2 ></\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 h3\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "collab-summary-block"\cf2 \strokec2 >\cf5 \strokec5 Celtic Travel\cf2 \strokec2 </\cf4 \strokec4 h3\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 p\cf2 \strokec2 >\cf5 \strokec5 aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum\cf2 \strokec2 </\cf4 \strokec4 p\cf2 \strokec2 >\cf5 \strokec5        \cb1 \
+\cb3       \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cb3   \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3     \cb1 \
+\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 id\cf5 \strokec5 =\cf7 \strokec7 "your-brand"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 id\cf5 \strokec5 =\cf7 \strokec7 "your-brand-container"\cf2 \strokec2 >\cf5 \strokec5  \cb1 \
+\
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "section-intro"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3   \cf2 \strokec2 <\cf4 \strokec4 h2\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "section-heading"\cf2 \strokec2 >\cf5 \strokec5 Think your brand\'92s doing its job? Let\'92s make sure\cf2 \strokec2 </\cf4 \strokec4 h2\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "your-brand-blocks"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "your-brand-block-01"\cf2 \strokec2 ></\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "your-brand-block-02"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3   \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "your-brand-block-02-01"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 <\cf4 \strokec4 h3\cf2 \strokec2 >\cf5 \strokec5 The Problem:\cf2 \strokec2 </\cf4 \strokec4 h3\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 <\cf4 \strokec4 p\cf2 \strokec2 >\cf5 \strokec5 Many brands struggle because their visual identity is confusing, inconsistent, or outdated. This leads to lost customers, missed opportunities, and a diluted message that fails to connect.\cf2 \strokec2 </\cf4 \strokec4 p\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3   \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cb3   \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "your-brand-block-02-02"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 <\cf4 \strokec4 h3\cf2 \strokec2 >\cf5 \strokec5 The Solution:\cf2 \strokec2 </\cf4 \strokec4 h3\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 <\cf4 \strokec4 p\cf2 \strokec2 >\cf5 \strokec5 Smart, thoughtful design fixes these issues by creating a clear, cohesive brand identity that builds trust, communicates your values, and stands out in a crowded market. With a strong design, your brand doesn\'92t just look good \'97 it works harder to attract and retain the right audience.\cf2 \strokec2 </\cf4 \strokec4 p\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3   \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\
+\
+\
+\
+\
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 id\cf5 \strokec5 =\cf7 \strokec7 "process"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3   \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 id\cf5 \strokec5 =\cf7 \strokec7 "process-container"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3     \cb1 \
+\cb3     \cf11 \strokec11 <!-- Section Intro -->\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "section-intro"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3       \cf2 \strokec2 <\cf4 \strokec4 h2\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "section-heading"\cf2 \strokec2 >\cf5 \strokec5 Your Brand, Step by Step\cf2 \strokec2 </\cf4 \strokec4 h2\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3       \cf2 \strokec2 <\cf4 \strokec4 p\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "section-paragraph"\cf2 \strokec2 >\cf5 \strokec5 Here are a few recent projects where I have teamed up with local businesses to create brands thst really click, bringing clear, friendly design that connects with their audience.\cf2 \strokec2 </\cf4 \strokec4 p\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cb3     \cf11 \strokec11 <!-- Collaborations Grid -->\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "process-grid"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3       \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "process-wrapper"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "process-image-block process-block-01"\cf2 \strokec2 ></\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 h3\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "process-summary-block"\cf2 \strokec2 >\cf5 \strokec5 Let's Talk\cf2 \strokec2 </\cf4 \strokec4 h3\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 p\cf2 \strokec2 >\cf5 \strokec5 We start with a friendly chat \'97 whether by phone or message \'97 to understand your business, goals, and the challenges you\'92re facing.\cf2 \strokec2 </\cf4 \strokec4 p\cf2 \strokec2 >\cf5 \strokec5      \cb1 \
+\cb3       \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "process-wrapper"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "process-image-block process-block-02"\cf2 \strokec2 ></\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 h3\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "process-summary-block"\cf2 \strokec2 >\cf5 \strokec5 Design with Purpose\cf2 \strokec2 </\cf4 \strokec4 h3\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 p\cf2 \strokec2 >\cf5 \strokec5 Using moodboards and mockups, I\'92ll develop early design ideas that truly reflect your personality, values, and target audience.\cf2 \strokec2 </\cf4 \strokec4 p\cf2 \strokec2 >\cf5 \strokec5      \cb1 \
+\cb3       \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "process-wrapper"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "process-image-block process-block-03"\cf2 \strokec2 ></\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 h3\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "process-summary-block"\cf2 \strokec2 >\cf5 \strokec5 Launch and Support\cf2 \strokec2 </\cf4 \strokec4 h3\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 p\cf2 \strokec2 >\cf5 \strokec5 After refining everything, you\'92ll receive the final designs along with clear guidance on how to confidently apply your new brand across all platforms.\cf2 \strokec2 </\cf4 \strokec4 p\cf2 \strokec2 >\cf5 \strokec5        \cb1 \
+\cb3       \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cb3   \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\
+\
+\
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 id\cf5 \strokec5 =\cf7 \strokec7 "gradient"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3   \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 id\cf5 \strokec5 =\cf7 \strokec7 "cta"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 id\cf5 \strokec5 =\cf7 \strokec7 "cta-container"\cf2 \strokec2 >\cf5 \strokec5    \cb1 \
+\cb3       \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "section-intro"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 h2\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "section-heading"\cf2 \strokec2 >\cf5 \strokec5 Hit me up if you're interested in working together\cf2 \strokec2 </\cf4 \strokec4 h2\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 p\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "section-paragraph"\cf2 \strokec2 >\cf5 \strokec5 Whether you\'92re starting fresh or want to give your current brand a proper refresh, I\'92d love to help. No pressure, no awkward calls \'97 just a quick chat to see if we\'92re a good fit.\cf2 \strokec2 </\cf4 \strokec4 p\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3       \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3       \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "cta-blocks"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3         \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "cta-block cta-block-01"\cf2 \strokec2 >\cf5 \strokec5 Block 01\cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3       \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3   \cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 id\cf5 \strokec5 =\cf7 \strokec7 "personal"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 id\cf5 \strokec5 =\cf7 \strokec7 "personal-container"\cf2 \strokec2 >\cf5 \strokec5    \cb1 \
+\
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "section-intro"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3   \cf2 \strokec2 <\cf4 \strokec4 h2\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "section-heading"\cf2 \strokec2 >\cf5 \strokec5 This is Personal\cf2 \strokec2 </\cf4 \strokec4 h2\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \strokec5   \cb1 \
+\
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "personal-blocks"\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3   \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "personal-block personal-block-01"\cf2 \strokec2 >\cf5 \strokec5 Block 01\cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cb3   \cf2 \strokec2 <\cf4 \strokec4 div\cf5 \strokec5  \cf6 \strokec6 class\cf5 \strokec5 =\cf7 \strokec7 "personal-block personal-block-02"\cf2 \strokec2 >\cf5 \strokec5 Block 02\cf2 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \strokec5  \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \strokec5   \cb1 \
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 div\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 script\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 nav\cf8 \strokec8  = \cf6 \strokec6 document\cf8 \strokec8 .\cf12 \strokec12 getElementById\cf8 \strokec8 (\cf7 \strokec7 'navigation'\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf4 \cb3 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 banner\cf8 \strokec8  = \cf6 \strokec6 document\cf8 \strokec8 .\cf12 \strokec12 getElementById\cf8 \strokec8 (\cf7 \strokec7 'banner'\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf4 \cb3 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 logo\cf8 \strokec8  = \cf6 \strokec6 document\cf8 \strokec8 .\cf12 \strokec12 getElementById\cf8 \strokec8 (\cf7 \strokec7 'nav-logo'\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf4 \cb3 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 bannerHeight\cf8 \strokec8  = \cf15 \strokec15 banner\cf8 \strokec8 .\cf6 \strokec6 offsetHeight\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\
+\cf4 \cb3 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 offset\cf8 \strokec8  = \cf10 \strokec10 125\cf8 \strokec8 ;  \cf11 \strokec11 // adjust this value to control when the nav changes\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 window\cf8 \strokec8 .\cf12 \strokec12 addEventListener\cf8 \strokec8 (\cf7 \strokec7 'scroll'\cf8 \strokec8 , () \cf4 \strokec4 =>\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf13 \strokec13 if\cf8 \strokec8  (\cf6 \strokec6 window\cf8 \strokec8 .\cf6 \strokec6 scrollY\cf8 \strokec8  > \cf15 \strokec15 bannerHeight\cf8 \strokec8  + \cf15 \strokec15 offset\cf8 \strokec8  - \cf15 \strokec15 nav\cf8 \strokec8 .\cf6 \strokec6 offsetHeight\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf15 \strokec15 nav\cf8 \strokec8 .\cf6 \strokec6 classList\cf8 \strokec8 .\cf12 \strokec12 add\cf8 \strokec8 (\cf7 \strokec7 'scrolled'\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf15 \strokec15 logo\cf8 \strokec8 .\cf6 \strokec6 src\cf8 \strokec8  = \cf7 \strokec7 'http://madebyliam.co/img/head-logo-02.png'\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \} \cf13 \strokec13 else\cf8 \strokec8  \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf15 \strokec15 nav\cf8 \strokec8 .\cf6 \strokec6 classList\cf8 \strokec8 .\cf12 \strokec12 remove\cf8 \strokec8 (\cf7 \strokec7 'scrolled'\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf15 \strokec15 logo\cf8 \strokec8 .\cf6 \strokec6 src\cf8 \strokec8  = \cf7 \strokec7 'http://madebyliam.co/img/head-logo-01.png'\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \}\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \});\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf2 \strokec2 </\cf4 \strokec4 script\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 script\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 gradients\cf8 \strokec8  = [\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   [\cf7 \strokec7 "#5153f0"\cf8 \strokec8 , \cf7 \strokec7 "#4b7fd3"\cf8 \strokec8 , \cf7 \strokec7 "#52a8bf"\cf8 \strokec8 ],  \cf11 \strokec11 // green, yellow, blue\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   [\cf7 \strokec7 "#00cff5"\cf8 \strokec8 , \cf7 \strokec7 "#15f2aa"\cf8 \strokec8 , \cf7 \strokec7 "#5bfd77"\cf8 \strokec8 ],  \cf11 \strokec11 // green, yellow, violet\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   [\cf7 \strokec7 "#ef31a5"\cf8 \strokec8 , \cf7 \strokec7 "#ff534b"\cf8 \strokec8 , \cf7 \strokec7 "#ff9b04"\cf8 \strokec8 ],  \cf11 \strokec11 // pink shades and purple\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   [\cf7 \strokec7 "#a035fc"\cf8 \strokec8 , \cf7 \strokec7 "#dc3add"\cf8 \strokec8 , \cf7 \strokec7 "#ff51a7"\cf8 \strokec8 ],  \cf11 \strokec11 // green, gold, red-pink\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 ];\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 step\cf8 \strokec8  = \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf4 \cb3 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 gradientSpeed\cf8 \strokec8  = \cf10 \strokec10 0.001\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf4 \cb3 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 current\cf8 \strokec8  = \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf4 \cb3 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 next\cf8 \strokec8  = \cf10 \strokec10 1\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\
+\cf4 \cb3 \strokec4 function\cf8 \strokec8  \cf12 \strokec12 hexToRgb\cf8 \strokec8 (\cf6 \strokec6 hex\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 bigint\cf8 \strokec8  = \cf12 \strokec12 parseInt\cf8 \strokec8 (\cf6 \strokec6 hex\cf8 \strokec8 .\cf12 \strokec12 slice\cf8 \strokec8 (\cf10 \strokec10 1\cf8 \strokec8 ), \cf10 \strokec10 16\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf13 \strokec13 return\cf8 \strokec8  [(\cf6 \strokec6 bigint\cf8 \strokec8  >> \cf10 \strokec10 16\cf8 \strokec8 ) & \cf10 \strokec10 255\cf8 \strokec8 , (\cf6 \strokec6 bigint\cf8 \strokec8  >> \cf10 \strokec10 8\cf8 \strokec8 ) & \cf10 \strokec10 255\cf8 \strokec8 , \cf6 \strokec6 bigint\cf8 \strokec8  & \cf10 \strokec10 255\cf8 \strokec8 ];\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 function\cf8 \strokec8  \cf12 \strokec12 interpolateColor\cf8 \strokec8 (\cf6 \strokec6 c1\cf8 \strokec8 , \cf6 \strokec6 c2\cf8 \strokec8 , \cf6 \strokec6 factor\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf13 \strokec13 return\cf8 \strokec8  \cf6 \strokec6 c1\cf8 \strokec8 .\cf12 \strokec12 map\cf8 \strokec8 ((\cf6 \strokec6 val\cf8 \strokec8 , \cf6 \strokec6 i\cf8 \strokec8 ) \cf4 \strokec4 =>\cf8 \strokec8  \cf6 \strokec6 Math\cf8 \strokec8 .\cf12 \strokec12 round\cf8 \strokec8 (\cf6 \strokec6 val\cf8 \strokec8  * (\cf10 \strokec10 1\cf8 \strokec8  - \cf6 \strokec6 factor\cf8 \strokec8 ) + \cf6 \strokec6 c2\cf8 \strokec8 [\cf6 \strokec6 i\cf8 \strokec8 ] * \cf6 \strokec6 factor\cf8 \strokec8 ));\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 function\cf8 \strokec8  \cf12 \strokec12 rgbToCss\cf8 \strokec8 (\cf6 \strokec6 rgb\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf13 \strokec13 return\cf8 \strokec8  \cf7 \strokec7 "rgb("\cf8 \strokec8  + \cf6 \strokec6 rgb\cf8 \strokec8 .\cf12 \strokec12 join\cf8 \strokec8 (\cf7 \strokec7 ","\cf8 \strokec8 ) + \cf7 \strokec7 ")"\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 function\cf8 \strokec8  \cf12 \strokec12 updateGradient\cf8 \strokec8 () \{\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf13 \strokec13 if\cf8 \strokec8  (\cf4 \strokec4 typeof\cf8 \strokec8  \cf15 \strokec15 $\cf8 \strokec8  === \cf7 \strokec7 'undefined'\cf8 \strokec8 ) \cf13 \strokec13 return\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 currentStart\cf8 \strokec8  = \cf12 \strokec12 hexToRgb\cf8 \strokec8 (\cf6 \strokec6 gradients\cf8 \strokec8 [\cf6 \strokec6 current\cf8 \strokec8 ][\cf10 \strokec10 0\cf8 \strokec8 ]);\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 currentMid\cf8 \strokec8  = \cf12 \strokec12 hexToRgb\cf8 \strokec8 (\cf6 \strokec6 gradients\cf8 \strokec8 [\cf6 \strokec6 current\cf8 \strokec8 ][\cf10 \strokec10 1\cf8 \strokec8 ]);\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 currentEnd\cf8 \strokec8  = \cf12 \strokec12 hexToRgb\cf8 \strokec8 (\cf6 \strokec6 gradients\cf8 \strokec8 [\cf6 \strokec6 current\cf8 \strokec8 ][\cf10 \strokec10 2\cf8 \strokec8 ]);\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 nextStart\cf8 \strokec8  = \cf12 \strokec12 hexToRgb\cf8 \strokec8 (\cf6 \strokec6 gradients\cf8 \strokec8 [\cf6 \strokec6 next\cf8 \strokec8 ][\cf10 \strokec10 0\cf8 \strokec8 ]);\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 nextMid\cf8 \strokec8  = \cf12 \strokec12 hexToRgb\cf8 \strokec8 (\cf6 \strokec6 gradients\cf8 \strokec8 [\cf6 \strokec6 next\cf8 \strokec8 ][\cf10 \strokec10 1\cf8 \strokec8 ]);\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 nextEnd\cf8 \strokec8  = \cf12 \strokec12 hexToRgb\cf8 \strokec8 (\cf6 \strokec6 gradients\cf8 \strokec8 [\cf6 \strokec6 next\cf8 \strokec8 ][\cf10 \strokec10 2\cf8 \strokec8 ]);\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 blendedStart\cf8 \strokec8  = \cf12 \strokec12 rgbToCss\cf8 \strokec8 (\cf12 \strokec12 interpolateColor\cf8 \strokec8 (\cf6 \strokec6 currentStart\cf8 \strokec8 , \cf6 \strokec6 nextStart\cf8 \strokec8 , \cf6 \strokec6 step\cf8 \strokec8 ));\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 blendedMid\cf8 \strokec8  = \cf12 \strokec12 rgbToCss\cf8 \strokec8 (\cf12 \strokec12 interpolateColor\cf8 \strokec8 (\cf6 \strokec6 currentMid\cf8 \strokec8 , \cf6 \strokec6 nextMid\cf8 \strokec8 , \cf6 \strokec6 step\cf8 \strokec8 ));\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf4 \strokec4 var\cf8 \strokec8  \cf6 \strokec6 blendedEnd\cf8 \strokec8  = \cf12 \strokec12 rgbToCss\cf8 \strokec8 (\cf12 \strokec12 interpolateColor\cf8 \strokec8 (\cf6 \strokec6 currentEnd\cf8 \strokec8 , \cf6 \strokec6 nextEnd\cf8 \strokec8 , \cf6 \strokec6 step\cf8 \strokec8 ));\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf12 \strokec12 $\cf8 \strokec8 (\cf7 \strokec7 '#gradient'\cf8 \strokec8 ).\cf12 \strokec12 css\cf8 \strokec8 (\{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf6 \strokec6 background:\cf8 \strokec8  \cf7 \strokec7 `linear-gradient(45deg, \cf4 \strokec4 $\{\cf6 \strokec6 blendedStart\cf4 \strokec4 \}\cf7 \strokec7 , \cf4 \strokec4 $\{\cf6 \strokec6 blendedMid\cf4 \strokec4 \}\cf7 \strokec7 , \cf4 \strokec4 $\{\cf6 \strokec6 blendedEnd\cf4 \strokec4 \}\cf7 \strokec7 )`\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \});\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf6 \strokec6 step\cf8 \strokec8  += \cf6 \strokec6 gradientSpeed\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf13 \strokec13 if\cf8 \strokec8  (\cf6 \strokec6 step\cf8 \strokec8  >= \cf10 \strokec10 1\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf6 \strokec6 step\cf8 \strokec8  = \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf6 \strokec6 current\cf8 \strokec8  = \cf6 \strokec6 next\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf6 \strokec6 next\cf8 \strokec8  = (\cf6 \strokec6 next\cf8 \strokec8  + \cf10 \strokec10 1\cf8 \strokec8 ) % \cf6 \strokec6 gradients\cf8 \strokec8 .\cf6 \strokec6 length\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \}\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \}\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf12 \cb3 \strokec12 setInterval\cf8 \strokec8 (\cf12 \strokec12 updateGradient\cf8 \strokec8 , \cf10 \strokec10 10\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 script\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb3 \strokec11 <!-- CTA Gradient -->\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 <\cf4 \strokec4 script\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 document\cf8 \strokec8 .\cf12 \strokec12 addEventListener\cf8 \strokec8 (\cf7 \strokec7 "DOMContentLoaded"\cf8 \strokec8 , \cf4 \strokec4 function\cf8 \strokec8  () \{\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8   \cf11 \strokec11 // Convert hex to [r, g, b]\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf4 \strokec4 function\cf8 \strokec8  \cf12 \strokec12 hexToRgb\cf8 \strokec8 (\cf6 \strokec6 hex\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf6 \strokec6 hex\cf8 \strokec8  = \cf6 \strokec6 hex\cf8 \strokec8 .\cf12 \strokec12 replace\cf8 \strokec8 (\cf7 \strokec7 "#"\cf8 \strokec8 , \cf7 \strokec7 ""\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf13 \strokec13 if\cf8 \strokec8  (\cf6 \strokec6 hex\cf8 \strokec8 .\cf6 \strokec6 length\cf8 \strokec8  === \cf10 \strokec10 3\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 hex\cf8 \strokec8  = \cf6 \strokec6 hex\cf8 \strokec8 .\cf12 \strokec12 split\cf8 \strokec8 (\cf7 \strokec7 ""\cf8 \strokec8 ).\cf12 \strokec12 map\cf8 \strokec8 (\cf6 \strokec6 c\cf8 \strokec8  \cf4 \strokec4 =>\cf8 \strokec8  \cf6 \strokec6 c\cf8 \strokec8  + \cf6 \strokec6 c\cf8 \strokec8 ).\cf12 \strokec12 join\cf8 \strokec8 (\cf7 \strokec7 ""\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \}\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf4 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 bigint\cf8 \strokec8  = \cf12 \strokec12 parseInt\cf8 \strokec8 (\cf6 \strokec6 hex\cf8 \strokec8 , \cf10 \strokec10 16\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf13 \strokec13 return\cf8 \strokec8  [\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       (\cf15 \strokec15 bigint\cf8 \strokec8  >> \cf10 \strokec10 16\cf8 \strokec8 ) & \cf10 \strokec10 255\cf8 \strokec8 ,\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       (\cf15 \strokec15 bigint\cf8 \strokec8  >> \cf10 \strokec10 8\cf8 \strokec8 ) & \cf10 \strokec10 255\cf8 \strokec8 ,\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf15 \strokec15 bigint\cf8 \strokec8  & \cf10 \strokec10 255\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     ];\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \}\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf11 \strokec11 // Define a sequence of gradients (pairs of hex colors)\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf4 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 gradientPairs\cf8 \strokec8  = [\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   [\cf7 \strokec7 "#5153f0"\cf8 \strokec8 , \cf7 \strokec7 "#4b7fd3"\cf8 \strokec8 , \cf7 \strokec7 "#52a8bf"\cf8 \strokec8 ],  \cf11 \strokec11 // green, yellow, blue\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   [\cf7 \strokec7 "#00cff5"\cf8 \strokec8 , \cf7 \strokec7 "#15f2aa"\cf8 \strokec8 , \cf7 \strokec7 "#5bfd77"\cf8 \strokec8 ],  \cf11 \strokec11 // green, yellow, violet\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   [\cf7 \strokec7 "#ef31a5"\cf8 \strokec8 , \cf7 \strokec7 "#ff534b"\cf8 \strokec8 , \cf7 \strokec7 "#ff9b04"\cf8 \strokec8 ],  \cf11 \strokec11 // pink shades and purple\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   [\cf7 \strokec7 "#a035fc"\cf8 \strokec8 , \cf7 \strokec7 "#dc3add"\cf8 \strokec8 , \cf7 \strokec7 "#ff51a7"\cf8 \strokec8 ],  \cf11 \strokec11 // green, gold, red-pink\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   ];\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf11 \strokec11 // Convert all hex values to RGB\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf4 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 gradientsRGB\cf8 \strokec8  = \cf15 \strokec15 gradientPairs\cf8 \strokec8 .\cf12 \strokec12 map\cf8 \strokec8 (\cf6 \strokec6 pair\cf8 \strokec8  \cf4 \strokec4 =>\cf8 \strokec8  \cf6 \strokec6 pair\cf8 \strokec8 .\cf12 \strokec12 map\cf8 \strokec8 (\cf12 \strokec12 hexToRgb\cf8 \strokec8 ));\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf4 \strokec4 let\cf8 \strokec8  \cf6 \strokec6 step\cf8 \strokec8  = \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf4 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 gradientSpeed\cf8 \strokec8  = \cf10 \strokec10 0.002\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \cf4 \strokec4 let\cf8 \strokec8  \cf6 \strokec6 currentIndex\cf8 \strokec8  = \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf4 \strokec4 function\cf8 \strokec8  \cf12 \strokec12 updateCTAGradient\cf8 \strokec8 () \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf4 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 nextIndex\cf8 \strokec8  = (\cf6 \strokec6 currentIndex\cf8 \strokec8  + \cf10 \strokec10 1\cf8 \strokec8 ) % \cf15 \strokec15 gradientsRGB\cf8 \strokec8 .\cf6 \strokec6 length\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8     \cf4 \strokec4 const\cf8 \strokec8  [\cf15 \strokec15 start1\cf8 \strokec8 , \cf15 \strokec15 end1\cf8 \strokec8 ] = \cf15 \strokec15 gradientsRGB\cf8 \strokec8 [\cf6 \strokec6 currentIndex\cf8 \strokec8 ];\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf4 \strokec4 const\cf8 \strokec8  [\cf15 \strokec15 start2\cf8 \strokec8 , \cf15 \strokec15 end2\cf8 \strokec8 ] = \cf15 \strokec15 gradientsRGB\cf8 \strokec8 [\cf15 \strokec15 nextIndex\cf8 \strokec8 ];\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8     \cf4 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 istep\cf8 \strokec8  = \cf10 \strokec10 1\cf8 \strokec8  - \cf6 \strokec6 step\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8     \cf11 \strokec11 // Interpolate start colors between current and next gradient start colors\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf4 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 r1\cf8 \strokec8  = \cf6 \strokec6 Math\cf8 \strokec8 .\cf12 \strokec12 round\cf8 \strokec8 (\cf15 \strokec15 istep\cf8 \strokec8  * \cf15 \strokec15 start1\cf8 \strokec8 [\cf10 \strokec10 0\cf8 \strokec8 ] + \cf6 \strokec6 step\cf8 \strokec8  * \cf15 \strokec15 start2\cf8 \strokec8 [\cf10 \strokec10 0\cf8 \strokec8 ]);\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf4 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 g1\cf8 \strokec8  = \cf6 \strokec6 Math\cf8 \strokec8 .\cf12 \strokec12 round\cf8 \strokec8 (\cf15 \strokec15 istep\cf8 \strokec8  * \cf15 \strokec15 start1\cf8 \strokec8 [\cf10 \strokec10 1\cf8 \strokec8 ] + \cf6 \strokec6 step\cf8 \strokec8  * \cf15 \strokec15 start2\cf8 \strokec8 [\cf10 \strokec10 1\cf8 \strokec8 ]);\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf4 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 b1\cf8 \strokec8  = \cf6 \strokec6 Math\cf8 \strokec8 .\cf12 \strokec12 round\cf8 \strokec8 (\cf15 \strokec15 istep\cf8 \strokec8  * \cf15 \strokec15 start1\cf8 \strokec8 [\cf10 \strokec10 2\cf8 \strokec8 ] + \cf6 \strokec6 step\cf8 \strokec8  * \cf15 \strokec15 start2\cf8 \strokec8 [\cf10 \strokec10 2\cf8 \strokec8 ]);\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf4 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 color1\cf8 \strokec8  = \cf7 \strokec7 `rgb(\cf4 \strokec4 $\{\cf15 \strokec15 r1\cf4 \strokec4 \}\cf7 \strokec7 ,\cf4 \strokec4 $\{\cf15 \strokec15 g1\cf4 \strokec4 \}\cf7 \strokec7 ,\cf4 \strokec4 $\{\cf15 \strokec15 b1\cf4 \strokec4 \}\cf7 \strokec7 )`\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8     \cf11 \strokec11 // Interpolate end colors between current and next gradient end colors\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf4 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 r2\cf8 \strokec8  = \cf6 \strokec6 Math\cf8 \strokec8 .\cf12 \strokec12 round\cf8 \strokec8 (\cf15 \strokec15 istep\cf8 \strokec8  * \cf15 \strokec15 end1\cf8 \strokec8 [\cf10 \strokec10 0\cf8 \strokec8 ] + \cf6 \strokec6 step\cf8 \strokec8  * \cf15 \strokec15 end2\cf8 \strokec8 [\cf10 \strokec10 0\cf8 \strokec8 ]);\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf4 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 g2\cf8 \strokec8  = \cf6 \strokec6 Math\cf8 \strokec8 .\cf12 \strokec12 round\cf8 \strokec8 (\cf15 \strokec15 istep\cf8 \strokec8  * \cf15 \strokec15 end1\cf8 \strokec8 [\cf10 \strokec10 1\cf8 \strokec8 ] + \cf6 \strokec6 step\cf8 \strokec8  * \cf15 \strokec15 end2\cf8 \strokec8 [\cf10 \strokec10 1\cf8 \strokec8 ]);\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf4 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 b2\cf8 \strokec8  = \cf6 \strokec6 Math\cf8 \strokec8 .\cf12 \strokec12 round\cf8 \strokec8 (\cf15 \strokec15 istep\cf8 \strokec8  * \cf15 \strokec15 end1\cf8 \strokec8 [\cf10 \strokec10 2\cf8 \strokec8 ] + \cf6 \strokec6 step\cf8 \strokec8  * \cf15 \strokec15 end2\cf8 \strokec8 [\cf10 \strokec10 2\cf8 \strokec8 ]);\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf4 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 color2\cf8 \strokec8  = \cf7 \strokec7 `rgb(\cf4 \strokec4 $\{\cf15 \strokec15 r2\cf4 \strokec4 \}\cf7 \strokec7 ,\cf4 \strokec4 $\{\cf15 \strokec15 g2\cf4 \strokec4 \}\cf7 \strokec7 ,\cf4 \strokec4 $\{\cf15 \strokec15 b2\cf4 \strokec4 \}\cf7 \strokec7 )`\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8     \cf4 \strokec4 const\cf8 \strokec8  \cf15 \strokec15 cta\cf8 \strokec8  = \cf6 \strokec6 document\cf8 \strokec8 .\cf12 \strokec12 getElementById\cf8 \strokec8 (\cf7 \strokec7 "cta"\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf13 \strokec13 if\cf8 \strokec8  (\cf15 \strokec15 cta\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf15 \strokec15 cta\cf8 \strokec8 .\cf6 \strokec6 style\cf8 \strokec8 .\cf6 \strokec6 background\cf8 \strokec8  = \cf7 \strokec7 `linear-gradient(45deg, \cf4 \strokec4 $\{\cf15 \strokec15 color1\cf4 \strokec4 \}\cf7 \strokec7 , \cf4 \strokec4 $\{\cf15 \strokec15 color2\cf4 \strokec4 \}\cf7 \strokec7 )`\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \}\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8     \cf6 \strokec6 step\cf8 \strokec8  += \cf15 \strokec15 gradientSpeed\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \cf13 \strokec13 if\cf8 \strokec8  (\cf6 \strokec6 step\cf8 \strokec8  >= \cf10 \strokec10 1\cf8 \strokec8 ) \{\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 step\cf8 \strokec8  = \cf10 \strokec10 0\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8       \cf6 \strokec6 currentIndex\cf8 \strokec8  = \cf15 \strokec15 nextIndex\cf8 \strokec8 ;\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8     \}\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8   \}\cf5 \cb1 \strokec5 \
+\
+\cf8 \cb3 \strokec8   \cf12 \strokec12 setInterval\cf8 \strokec8 (\cf12 \strokec12 updateCTAGradient\cf8 \strokec8 , \cf10 \strokec10 10\cf8 \strokec8 );\cf5 \cb1 \strokec5 \
+\cf8 \cb3 \strokec8 \});\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 script\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+\
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 body\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\cf2 \cb3 \strokec2 </\cf4 \strokec4 html\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\
+}

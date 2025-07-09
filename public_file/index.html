@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flexy Layout Example</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+html body {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevents horizontal scroll */
+  background: #fff; margin: 0;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.5;
+  text-align:center;
+}
+
+h1, 
+h2, 
+h3, 
+h4 {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+h1 { 
+  font-size: 2rem; font-weight: 300;
+  color:#fff;
+}
+
+h2 {
+  font-size: 2.5rem; font-weight: 300;
+  text-align: center;
+}
+
+h3 { 
+  font-size: 1.5rem; font-weight:400;
+  text-align: center; color:#000;
+  padding:0; margin:0; 
+}
+
+p {
+  font-size: 1rem; font-weight: 300;
+  color:#777;
+}
+
+
+
+
+#main-container {
+  width: 100%; min-height: 100vh; 
+  display: flex; flex-direction: column; 
+  margin: 0 auto;
+}
+
+.section { 
+  display:flex; justify-content:center; 
+  text-align:center; align-items:center;
+  flex-direction:column; margin-bottom:3rem;
+}
+
+.section-heading {
+  display: flex; justify-content: center; 
+  text-align: center; align-items: center;
+  flex-direction: column;
+  padding:0; margin-bottom:1.5rem;
+}
+
+.section-paragraph { 
+  font-size: 1.125rem;
+  max-width: 75%;
+  padding:0; margin:0 auto;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 2rem; left: 50%;
+  transform: translateX(-50%);
+  color: #fff; text-decoration: none;
+  font-size: 1rem; font-weight: 300;
+  opacity: 0.8;
+  animation: bounce 2s infinite;
+  
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 10px);
+  }
+}
+
+
+
+/* Navigation CSS  */
+
+#navigation {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 100px;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  transition: background 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  z-index: 10000;
+}
+
+#navigation.scrolled {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  color: #1a1a1a;
+}
+
+/* Hide nav content (logo + links) */
+#navigation.hidden-content .nav-logo, #navigation.hidden-content nav {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Show nav content */
+#navigation.visible-content .nav-logo, #navigation.visible-content nav {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.3s ease;
+}
+
+#navigation-container {
+  max-width: 1200px;
+  width: 96%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  width:8rem;
+  transition: filter 0.3s ease;
+}
+
+ul.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+ul.nav-list li a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: color 0.3s ease;
+}
+
+#navigation:not(.scrolled) #nav-menu.show .nav-list li a {
+  color: #000 !important;
+}
+
+/* 🍔 Hamburger */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  height: 18px;
+  width: 5%;
+  gap: 6px;
+  z-index: 10001;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #fff;
+  transition: all 0.3s ease; 
+}
+
+/* When nav is scrolled (white background), make hamburger black */
+#navigation.scrolled .hamburger span {
+  background:#548fe9;
+}
+/* Turn into X when open */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(3px, 3px);
+}
+.hamburger.open span:nth-child(2) {
+  transform: rotate(-45deg) translate(3px, -3px);
+}
+
+/* 📱 Mobile Menu */
+@media (max-width: 768px) {
+.hamburger {
+  display: flex;
+}
+
+#nav-menu {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  padding: 2rem 0;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  z-index: 10001;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+}
+
+#nav-menu.show {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-list {
+  width: 100%;
+  align-items: flex-start;
+  padding-left: 100px;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left; /* <- this will affect the entire list */
+}
+
+#navigation .nav-list li a {
+  font-size: 1.2rem;
+  font-weight: 500; margin-left:4%;
+  text-align:left; color:#363336;
+  display:block; 
+  padding-left: 30px;
+}
+
+/* Overlay backdrop */
+#mobile-backdrop {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 10000;
+  transition: opacity 0.3s ease;
+}
+
+#mobile-backdrop.active {
+  display: block;
+}
+
+/* Adjust color when nav is transparent */
+#navigation:not(.scrolled) #nav-menu {
+  background: #fff;
+}
+
+#navigation:not(.scrolled) .nav-list li a {
+  color: #363336;
+}
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+#navigation {
+  height: 70px;
+  padding: 0 1.5rem;
+}
+#banner h1 {
+  font-size: 1.8rem;
+}
+ul.nav-list {
+  gap: 1rem;
+}
+}
+
+
+/* Desktop nav links: always white */
+@media (min-width: 769px) {
+/* Text colors on desktop depending on scroll */
+#navigation:not(.scrolled) .nav-list li a {
+  color: #fff !important;
+}
+#navigation.scrolled .nav-list li a {
+  color: #363336 !important;
+}
+
+/* Underline hover effect for transparent nav (white text) */
+#navigation:not(.scrolled) .nav-list li a {
+  position: relative;
+}
+#navigation:not(.scrolled) .nav-list li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* adjust if needed */
+  width: 0;
+  height: 2px;
+  background-color: #fff; /* white underline */
+  transition: width 0.3s ease;
+}
+#navigation:not(.scrolled) .nav-list li a:hover::after {
+  width: 100%;
+}
+
+/* Underline hover effect for scrolled nav (dark text) */
+#navigation.scrolled .nav-list li a {
+  position: relative;
+}
+#navigation.scrolled .nav-list li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: #548fe9; /* dark underline */
+  transition: width 0.3s ease;
+}
+#navigation.scrolled .nav-list li a:hover::after {
+  width: 100%;
+}
+}
+
+
+/* Main Banner and Gradient CSS  */
+
+#gradient {
+  padding-top:0px;  /* same as nav height */
+  width: 100%; margin: 0 auto;
+  background: linear-gradient(45deg,
+  #3c90f1 0%, 
+  #ba65d5 33%, 
+  #da537d 66%, 
+  #e4602a 100%);
+  background-position:fixed;
+}
+
+/* Global box-sizing reset (optional but helpful for layout consistency) */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+#banner {
+  width: 90vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+
+.banner-wrapper {  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 58vw;
+  gap: 1.5rem;    
+  text-align: left;
+  animation: fadeIn 0.6s ease-out both; 
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🔤 Main heading text */
+.banner-wrapper h1 {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.6;
+  gap:1em;  
+}
+
+/* 📱 Mobile: narrow screen adjustments */
+@media (max-width: 400px) {
+.banner-wrapper {
+  width: 95vw;
+  height: 80vh;
+  padding-top: 20%;
+}
+
+#banner h1 {
+  font-size: 1.4rem;
+  text-align: center;
+}
+}
+
+
+/* Recent Collaborations CSS  */
+
+#collab { 
+  background:#fff;
+  width: 100%; margin: 0 auto;
+
+}
+#collab-container { 
+  border-right:1px solid #00fcff; border-left:1px solid #00fcff;
+  width: 90%; max-width: 1200px;
+  margin: 0 auto; padding:5rem 0 6rem 0;
+}
+.collab-grid {
+  display: flex; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+  width: 100%;
+}
+.collab-summary-block { padding:0.5rem 0 2rem; }
+.collab-summary-block h3 { padding:0 0 0.75rem; }
+.collab-summary-block p { padding:0; margin:0; }
+
+/* Each wrapper holds an image and a summary */
+.collab-wrapper {
+  display: flex; flex-direction: column;
+  width: 25%; /* 3 in a row */
+  box-sizing: border-box; gap: 1rem;
+}
+
+/* Image block styles */
+.collab-image-block {
+  width: 100%; min-height: 243px;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+  will-change: transform;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.collab-image-block.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.collab-image-block:hover {
+  transform: scale(1.03); cursor: pointer;
+}
+/* Backgrounds */
+.collab-block-01 {
+  background: #ff835e url("http://madebyliam.co/img/icons/housmans.png") no-repeat center center;
+  background-size: 11rem;
+}
+.collab-block-02 {
+  background: #1a72d4 url("http://madebyliam.co/img/icons/a2b.png") no-repeat center center;
+  background-size: 11rem;
+}
+.collab-block-03 {
+  background: #007f65 url("http://madebyliam.co/img/icons/celtic.png") no-repeat center center;
+  background-size: 11rem;
+}
+
+/* 📱 Mobile: stack all 3 vertically */
+@media (max-width: 768px) {
+#collab-container {
+  flex-direction: column;
+  align-items: center;
+}
+.collab-wrapper {
+  width: 100%;
+}
+}
+
+
+
+
+
+
+/* Think your brand’s doing its job? CSS  */
+
+
+#your-brand { 
+  background:#f4f4f4;
+  width: 100%; margin: 0 auto; padding:5rem 0 0 0;
+}
+
+#your-brand-container {
+  border-right:1px solid #00fcff;
+  border-left:1px solid #00fcff;  
+  width: 92%; padding:0 0 6rem 0;
+  display:flex;
+  justify-content:space-between;
+}
+
+#your-brand-block-01 {
+  width: 50%;
+  padding: 0rem;
+  opacity: 0.5;
+  transform: translateX(-200px); /* start slightly left */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+#your-brand-block-01.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Laptop image block */
+
+.your-brand-block-01-laptop {
+  width: 100%;
+  aspect-ratio: 3 / 2; /* or the actual ratio of your image */
+  background-image: url("http://madebyliam.co/img/your-brand-block-01.png");
+  background-size: cover;
+  background-position: center 1px; /* shift image down by 10px */
+  background-repeat: no-repeat;
+}
+
+#your-brand-block-02 { 
+  width: 47%; 
+  padding: 0rem; 
+}
+
+/* Heading inside block right of laptop */
+.your-brand-block-02 h3 {
+  text-align:left;
+  margin-bottom: 0.5rem;  
+}
+
+.qa-container { 
+  padding-top:18px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 26px; /* gap below Questions */
+}
+
+.qa-item { 
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 26px;
+}
+
+.qa-question {
+  width: 100%;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.qa-text { 
+  font-size: 1rem; 
+  font-weight: 00;
+  text-align: center;
+  color:#000;
+  flex: 1;
+  text-align: left; line-height:0;
+}
+
+.qa-toggle {
+  font-size: 24px;
+  font-weight: 400;
+  display: inline-block;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.qa-item.open .qa-toggle {
+  transform: rotate(45deg); /* + becomes × */
+}
+
+.qa-answer { 
+  color:#777;;
+  font-weight:300;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  margin-top: 0;
+  text-align:left;
+}
+
+.qa-item.open .qa-answer {
+  max-height: 500px; /* should be enough for most answers */
+  opacity: 1;
+  margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+#your-brand { 
+  width: 100%;
+}
+
+#your-brand-container {
+  width: 90%;
+  flex-direction:column; margin:0 auto;
+}
+
+#your-brand-block-01 {
+  width: 100%;
+}
+
+.your-brand-block-01-laptop {
+  background-image: url("http://madebyliam.co/img/laptop-media.png");
+  background-size: 100%;
+}
+
+#your-brand-block-02 { 
+  width: 100%; 
+}
+}
+
+
+
+
+/* Your Brand, Step by Step CSS  */
+
+#process { 
+  background:#fff;
+  width: 100%; margin: 0 auto;
+}
+#process-container { 
+  border-right:1px solid #00fcff; border-left:1px solid #00fcff;
+  width: 90%; max-width: 1200px;
+  margin: 0 auto; padding:5rem 0 6rem 0;
+}
+.process-grid {
+  display: flex; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+  width: 100%;  
+}
+
+
+
+
+
+.process-summary-block { padding:0.5rem 0 2rem; }
+.process-summary-block h3 { padding:0 0 0.75rem; }
+.process-summary-block p { padding:0; margin:0; }
+
+/* Each wrapper holds an image and a summary */
+.process-wrapper {
+  display: flex; flex-direction: column;
+  width: 25%; /* 3 in a row */
+  box-sizing: border-box; gap: 1rem;
+}
+
+/* Image block styles */
+.process-image-block {
+  width: 100%; min-height: 243px;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+  will-change: transform;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.process-image-block.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Backgrounds */
+.process-block-01 {
+  background: #ff835e url("http://madebyliam.co/img/icons/housmans.png") no-repeat center center;
+  background-size: 11rem;
+}
+.process-block-02 {
+  background: #1a72d4 url("http://madebyliam.co/img/icons/a2b.png") no-repeat center center;
+  background-size: 11rem;
+}
+.process-block-03 {
+  background: url("http://madebyliam.co/img/steps-03.jpg") no-repeat center center;
+  background-size: 100%;
+}
+
+/* 📱 Mobile: stack all 3 vertically */
+@media (max-width: 768px) {
+#process-container {
+  flex-direction: column;
+  align-items: center;
+}
+.process-wrapper {
+  width: 100%;
+}
+}
+
+
+
+
+
+
+
+
+
+/* Call to Action CSS  */
+
+#cta { 
+  background: linear-gradient(45deg, 
+  #3c90f1 0%, 
+  #ba65d5 33%, 
+  #da537d 66%, 
+  #e4602a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%; margin: 0 auto;
+
+}
+
+#cta-container {
+  border-right:1px solid #00fcff; border-left:1px solid #00fcff;
+  width: 90%; max-width: 1200px;
+  margin: 0 auto; padding:5rem 0 6rem 0;
+}
+
+#cta h2 { color:#fff; }
+#cta p { color:#fff; }
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #333;
+  text-transform:uppercase;
+  background:#fff;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+#cta {
+  flex-direction: column;
+  gap: 1rem;
+}
+.cta-blocks {
+  flex-direction: column;
+  align-items: center;
+} 
+.cta-block { 
+  flex: 1 1 100%;
+  width: 100%;
+}
+}
+
+
+
+
+/* Record of the Week CSS  */
+
+#record-of-the-week { 
+  background:#fff;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding:5.5rem 0 7.5rem 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+#record-of-the-week-container { 
+  width: 90%; max-width: 1200px;
+  margin: 0 auto; padding: 0rem;
+}
+/* Unique styles per block */
+.record-of-the-week-block { 
+  display: flex;
+  align-items:left;      
+  justify-content:flex-start;   
+  padding:0;
+}
+.record {
+  background:url("http://madebyliam.co/img/vinyl-frank.png") top center no-repeat;
+  min-width:125px; min-height:125px; 
+  background-size:125px 125px; 
+  animation: spin 2.8s linear infinite;
+  transform-origin: center center;
+}
+
+.record:hover {
+  transform: rotate(360deg) scale(1.05);
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.record-description { 
+  display: flex; flex-direction: column; 
+  padding-left:2.5rem;
+  text-align:left;
+}
+.record-description-title {
+  font-size: 1rem; padding-bottom:0.75rem;
+  font-weight: 500;
+  line-height:1.3;
+  color:#777; 
+}
+.record-description-record {  text-align:left; 
+  font-size: 1.25rem; 
+  font-weight: 400;
+  text-align: center;
+  color:#000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.record-of-the-week-block {
+  flex: 1 1 100%;
+  width: 100%;
+}
+.record {
+  min-width: 100px;
+  min-height: 100px;
+  background-size: 100px 100px;
+  }
+}
+
+
+
+#dribbble { background:#f7f7f7;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding:7.5rem 0 7.5rem 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+#dribbble-container { 
+  width: 90%; max-width: 1200px;
+  margin: 0 auto; padding:0;
+}
+
+/* Unique styles per block */
+.dribbble-block { 
+  display: flex;
+  align-items:left;      
+  justify-content:flex-start;   
+  padding:0;
+}
+
+.dribbble-block p { text-align:left; }
+/* Flex grid for images */
+.dribbble-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.dribbble-image {
+  position: relative;
+  flex: 0 0 23%;
+  aspect-ratio: 576 / 476;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Gradient overlay on hover */
+.dribbble-image::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 66.66%;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.dribbble-image:hover::after {
+  opacity: 1;
+}
+
+/* Title on left */
+.dribbble-title {
+  position: absolute;
+  bottom: 22px;   /* Updated from 22px */
+  left: 20px;     /* Updated from 20px */
+  max-width: 60%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.dribbble-image:hover .dribbble-title {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Icon stays bottom-right */
+.dribbble-icon-wrapper {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  border-radius: 999px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  z-index: 2;
+}
+
+.dribbble-image:hover .dribbble-icon-wrapper {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dribbble-icon-wrapper:hover {
+  background-color: #ff70b5;
+}
+
+.dribbble-icon-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+/* Individual backgrounds */
+.img-1 {
+  background-image: url('https://cdn.dribbble.com/userupload/43859950/file/original-54b73b445aeac68f8421ae4f50dc5d66.jpg?format=webp&resize=640x480&vertical=center');
+}
+.img-2 {
+  background-image: url('https://cdn.dribbble.com/userupload/43827916/file/original-948f2a546b8ed6791d6d4c4ede8a339b.jpg?format=webp&resize=640x480&vertical=center');
+}
+.img-3 {
+  background-image: url('https://cdn.dribbble.com/userupload/43811265/file/original-8ae42b7fa80f6931b159a998e2c4b94f.jpg?format=webp&resize=640x480&vertical=center');
+}
+.img-4 {
+  background-image: url('https://cdn.dribbble.com/userupload/43810983/file/original-cf28135cde332ca4120c9ec50a8af973.jpg?format=webp&resize=640x480&vertical=center');
+}
+
+
+
+
+
+
+
+
+
+/* 💬 Main Wrapper */
+.dribbble-link {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  width: 100%;
+  text-align: right;
+  position: relative;
+  /* background: red; <-- remove visual debugging */
+}
+
+/* 💬 Container for blocks and bouncing ball */
+.dribbble-link-block-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  position: relative;
+  /* background: blue; <-- optional debugging */
+}
+
+/* 💬 Text Block */
+.dribbble-link-block-01 { 
+  display: flex; padding-right:1rem;
+  flex-direction: column;
+  /* background: yellow; */
+}
+
+/* 💬 Text Styling */
+.dribbble-link-title {
+  padding-bottom: 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #000;
+  text-align: left;
+}
+
+.dribbble-link-ahref a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #777;
+  line-height: 1.4;
+}
+
+/* 💬 Dribbble Logo Block (holds bouncing ball) */
+.dribbble-link-block-02 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2px;
+  /* background: green; */
+}
+
+/* 🎾 Bouncing Ball */
+.dribbble-logo-bg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  background-image: url('https://madebyliam.co/img/icons/dribbble-ball.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: bounce-absolute 0.9s infinite;
+  /* background: pink; <-- optional */
+}
+
+/* 🎾 Bounce Keyframes */
+@keyframes bounce-absolute {
+  0%   { top: 0; }
+  45%  { top: calc(100% - 16px); }
+  55%  { top: calc(100% - 14px); }
+  70%  { top: calc(100% - 16px); }
+  100% { top: 0; }
+}
+
+
+
+
+/* 768px and below - 2 columns x 2 rows */
+@media (max-width: 768px) {
+.dribbble-image {
+  flex: 0 0 calc(50% - 1rem); /* half width minus gap */
+  min-width: unset;
+  max-width: unset;
+  }
+
+.dribbble-link { 
+  display:flex; 
+  justify-content:center; width:100%;
+  text-align: center;
+}
+}
+</style>
+
+
+
+
+
+</head>
+
+<body>
+
+<div id="main-container">
+
+<div id="navigation">
+  <div class="nav-content" id="navigation-container">
+    <img id="nav-logo" class="nav-logo" src="http://madebyliam.co/img/head-logo-01.png" alt="Logo" />
+    
+    <!-- 👇 Mobile Toggle Button (Hamburger) -->
+    <div id="mobile-toggle" class="hamburger">
+    <span></span>
+    <span></span>
+    </div>
+
+    <!-- 👇 Wrap your nav in a container for easier toggle -->
+    <nav id="nav-menu">
+      <ul class="nav-list">
+        <li><a href="#">Work</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+
+
+
+
+<div id="gradient">
+  <div id="banner">
+    <h1 class="banner-wrapper">Hello. I’m Liam.<br>I’m an experienced UI and brand designer based in Shrewsbury. I specialise in creating hand-crafted, user-friendly websites and digital products that help local businesses stand out with confidence and clarity.</h1>
+  </div>
+</div>
+
+<a href="#collab" class="scroll-cue">
+  ↓ Scroll to see work
+</a>
+
+
+<!-- Recent Collaborations -->
+
+<div id="collab">
+  <div id="collab-container">
+    
+    <div class="section">
+      <h2 class="section-heading">Recent Collaborations</h2>
+      <p class="section-paragraph">Here are a few recent projects where I have teamed up with local businesses to create brands thst really click, bringing clear, friendly design that connects with their audience.</p>
+    </div>
+
+    <div class="collab-grid">
+      <div class="collab-wrapper">
+        <div class="collab-image-block collab-block-01"></div>
+        <div class="collab-summary-block"><h3>Housmans</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>     
+      </div>
+    </div>
+
+    <div class="collab-wrapper">
+      <div class="collab-image-block collab-block-02"></div>
+        <div class="collab-summary-block"><h3>A2B Travel</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>     
+      </div>
+    </div>
+
+    <div class="collab-wrapper">
+      <div class="collab-image-block collab-block-03"></div>
+        <div class="collab-summary-block"><h3>Celtic Travel</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>     
+      </div>
+    </div>
+
+  </div><!-- "collab-container" -->
+</div><!-- "collab" -->
+
+
+
+
+<!-- "Think your Brand is Doing it's Job?" -->
+
+<div id="your-brand">
+
+  <div class="section">
+    <h2 class="section-heading">Think your brand’s doing its job? Let’s make sure</h2>
+  </div> 
+
+  <div id="your-brand-container">
+
+  <!-- Laptop - Start -->
+  <div id="your-brand-block-01">
+    <div class="your-brand-block-01-laptop"></div>
+  </div>
+  <!-- Laptop - End -->
+
+  <!-- Frequently Asked Questions - Start -->
+  <div id="your-brand-block-02">
+    <div class="qa-container">
+
+  <div class="qa-item">
+    <button class="qa-question" onclick="toggleQA(this)">
+      <h3 class="qa-text">Our brand just doesn’t feel like us anymore</h3>
+      <span class="qa-toggle">+</span>
+    </button>
+    <div class="qa-answer">That disconnect is more common than you think — brands evolve, but their identity often gets left behind. I realign yours to reflect who you are now, not who you were. The result feels authentic, modern, and genuinely you.</div>
+  </div>
+
+  <div class="qa-item">
+    <button class="qa-question" onclick="toggleQA(this)">
+      <h3 class="qa-text">We’ve got a logo, isn’t that enough?</h3>
+      <span class="qa-toggle">+</span>
+    </button>
+    <div class="qa-answer">A logo is a symbol. A brand is a system. I help you go beyond just a mark — we’ll create a full identity that speaks with consistency across everything you put out. One that works in the real world, not just on paper.</div>
+  </div>
+
+  <div class="qa-item">
+    <button class="qa-question" onclick="toggleQA(this)">
+      <h3 class="qa-text">We have a website, but it’s not doing anything.</h3>
+      <span class="qa-toggle">+</span>
+    </button>
+    <div class="qa-answer">A website should work harder than just sitting pretty. I design sites that connect quickly, guide users effortlessly, and get people to take action. It’s not about more pages — it’s about more clarity.</div>
+   </div>
+
+  <div class="qa-item">
+    <button class="qa-question" onclick="toggleQA(this)">
+      <h3 class="qa-text">SEO feels like a scam. Is it even worth it?</h3>
+      <span class="qa-toggle">+</span>
+    </button>
+    <div class="qa-answer">SEO is only a scam when it’s sold that way. I focus on real SEO — making your site fast, readable, and easy to understand (for people and Google). No jargon. No gimmicks. Just smart structure and content that earns trust.</div>
+  </div>
+  
+  <div class="qa-item">
+    <button class="qa-question" onclick="toggleQA(this)">
+      <h3 class="qa-text">Is this all actually worth the investment?</h3>
+      <span class="qa-toggle">+</span>
+    </button>
+    <div class="qa-answer">If you’re still trying to explain what you do — or still feel like your brand’s not quite right — then yes, it is. Design done right pays for itself over time. It builds trust, cuts confusion, and makes people choose you faster.</div>
+  </div>
+
+  </div>
+</div>
+<!-- Frequently Asked Questions - End -->
+
+  </div><!-- "your-brand-container" -->
+</div><!-- "your-brand" -->
+
+
+
+
+
+
+<!-- "Your Brand, Step by Step" -->
+
+<div id="process">
+  <div id="process-container">
+    
+  <!-- Section Intro -->
+  <div class="section">
+    <h2 class="section-heading">Your Brand, Step by Step</h2>
+    <p class="section-paragraph">Here are a few recent projects where I have teamed up with local businesses to create brands thst really click, bringing clear, friendly design that connects with their audience.</p>
+  </div>
+
+  <!-- Collaborations Grid -->
+  <div class="process-grid">
+
+    <div class="process-wrapper">
+      <div class="process-image-block process-block-01"></div>
+        <div class="process-summary-block"><h3>Let's Talk</h3>
+          <p>We start with a friendly chat — whether by phone or message — to understand your business, goals, and the challenges you’re facing.</p>     
+      </div>
+    </div>
+
+    <div class="process-wrapper">
+      <div class="process-image-block process-block-02"></div>
+        <div class="process-summary-block"><h3>Design with Purpose</h3>
+          <p>Using moodboards and mockups, I’ll develop early design ideas that truly reflect your personality, values, and target audience.</p>     
+      </div>
+    </div>
+
+    <div class="process-wrapper">
+      <div class="process-image-block process-block-03"></div>
+        <div class="process-summary-block"><h3>Launch and Support</h3>
+          <p>After refining everything, you’ll receive the final designs along with clear guidance on how to confidently apply your new brand across all platforms.</p>     
+      </div>
+    </div>
+
+  </div><!-- "process-container" -->
+</div><!-- "process-brand" -->
+
+
+
+
+<div id="cta">
+  <div id="cta-container">  
+
+    <div class="section">
+      <h2 class="section-heading">Hit me up if you're interested in working together</h2>
+        <p class="section-paragraph">Whether you’re starting fresh or want to give your current brand a refresh, I’d love to help! No pressure, no awkward calls - just a quick chat to see if we’re a good fit.</p>
+    </div>
+
+    <div class="cta-blocks">
+      <a href="https://calendly.com/hi-madebyliam/30min"  target="_blank" class="cta-button">Let’s Chat</a>
+    </div>
+
+  </div><!-- "cta-container" -->
+</div><!-- "cta" -->
+
+
+
+
+
+
+
+<div id="dribbble">
+  <div id="dribbble-container"> 
+
+<div class="dribbble-block">
+    <div class="dribbble-grid">
+
+<a href="https://dribbble.com/madebyliam" target="_blank" rel="noopener noreferrer" class="dribbble-image img-1">
+  <div class="dribbble-meta">
+    <span class="dribbble-title">A2B Travel Mobile UI</span>
+      <div class="dribbble-icon-wrapper">
+      <img src="https://madebyliam.co/img/icons/dribbble.png" alt="Dribbble Icon" />
+    </div>
+  </div>
+</a>
+ 
+
+<a href="https://dribbble.com/madebyliam" target="_blank" rel="noopener noreferrer" class="dribbble-image img-2">
+  <div class="dribbble-meta">
+    <span class="dribbble-title">A2B Travel Home Page</span>
+      <div class="dribbble-icon-wrapper">
+      <img src="https://madebyliam.co/img/icons/dribbble.png" alt="Dribbble Icon" />
+    </div>
+  </div>
+</a>
+      
+        
+<a href="https://dribbble.com/madebyliam" target="_blank" rel="noopener noreferrer" class="dribbble-image img-3">
+  <div class="dribbble-meta">
+    <span class="dribbble-title">A2B Travel logo and a little flavour</span>
+      <div class="dribbble-icon-wrapper">
+      <img src="https://madebyliam.co/img/icons/dribbble.png" alt="Dribbble Icon" />
+    </div>
+  </div>
+</a>
+      
+<a href="https://dribbble.com/madebyliam" target="_blank" rel="noopener noreferrer" class="dribbble-image img-4">
+  <div class="dribbble-meta">
+    <span class="dribbble-title">A2B Travel Logo</span>
+      <div class="dribbble-icon-wrapper">
+      <img src="https://madebyliam.co/img/icons/dribbble.png" alt="Dribbble Icon" />
+    </div>
+  </div>
+</a>
+
+<div class="dribbble-link">
+  <div class="dribbble-link-block-container">
+    <div class="dribbble-link-block-01">
+      <div class="dribbble-link-title">More design shots at</div>
+    <div class="dribbble-link-ahref"><a href="https://dribbble.com/madebyliam">dribbble.com/madebyliam</a>
+  </div>
+</div>
+
+<div class="dribbble-link-block-02">
+  <span class="dribbble-logo-bg"></span>
+</div>
+      
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div id="record-of-the-week">
+  <div id="record-of-the-week-container">  
+
+<div class="record-of-the-week-block">
+  <div class="record"></div>
+  <div class="record-description">
+    <div class="record-description-title">Record of the Week</div>
+    <div class="record-description-record">Frank - Amy Winehouse </div>
+  </div>
+</div>
+
+  </div><!-- "record-of-the-week-container" -->
+</div><!-- "record-of-the-week" -->
+
+</div>
+
+
+
+
+
+
+
+<script>
+const nav = document.getElementById('navigation');
+const logo = document.getElementById('nav-logo');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 0) {
+    nav.classList.add('scrolled');
+    logo.src = 'http://madebyliam.co/img/head-logo-02.png';
+  } else {
+    nav.classList.remove('scrolled');
+    logo.src = 'http://madebyliam.co/img/head-logo-01.png';
+  }
+});
+</script>
+
+
+
+<!-- FAQ Drop Down Script -->
+<script>
+  function toggleQA(button) {
+    const item = button.closest('.qa-item');
+    item.classList.toggle('open');
+  }
+</script>
+
+<!-- Hamburger Navigation -->
+<script>
+  $(document).ready(function () {
+    $('#mobile-toggle').click(function () {
+      $(this).toggleClass('open');
+      $('#nav-menu').toggleClass('show');
+      $('#mobile-backdrop').toggleClass('active');
+    });
+
+    // Optional: Click backdrop to close menu
+    $('#mobile-backdrop').click(function () {
+      $('#mobile-toggle').removeClass('open');
+      $('#nav-menu').removeClass('show');
+      $(this).removeClass('active');
+    });
+  });
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const imageBlocks = document.querySelectorAll('.collab-image-block, .process-image-block');
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Optional: stop observing once it's visible
+      }
+    });
+  }, { threshold: 0.3 });
+
+  imageBlocks.forEach(block => observer.observe(block));
+});
+</script>
+
+
+
+<!-- Laptop Animation -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const brandBlock = document.querySelector('#your-brand-block-01');
+
+    if (!brandBlock) return;
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            brandBlock.classList.add('visible');
+            observer.unobserve(brandBlock); // Stop observing after trigger
+          }
+        });
+      },
+      { threshold: 0.2 } // Trigger when 20% of the element is visible
+    );
+
+    observer.observe(brandBlock);
+  });
+</script>
+
+
+</body>
+</html>
